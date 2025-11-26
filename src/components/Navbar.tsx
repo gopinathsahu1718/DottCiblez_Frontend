@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logo from '../assets/logo.png';
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -8,6 +9,10 @@ const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const navigate = useNavigate();
+
+  // NEW: For hover delay close
+  const closeTimeout = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,19 +22,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMobileMenuOpen]);
 
-  // Close menu when window is resized to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024 && isMobileMenuOpen) {
@@ -54,21 +53,13 @@ const Navbar = () => {
     <>
       <style>{`
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
         
         @keyframes slideInRight {
-          from {
-            transform: translateX(100%);
-          }
-          to {
-            transform: translateX(0);
-          }
+          from { transform: translateX(100%); }
+          to { transform: translateX(0); }
         }
         
         .mobile-menu-enter {
@@ -81,13 +72,12 @@ const Navbar = () => {
       `}</style>
 
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled
-          ? 'bg-white/98 backdrop-blur-md shadow-lg'
-          : 'bg-white/95 backdrop-blur-sm shadow-md'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white/98 backdrop-blur-md shadow-lg' : 'bg-white/95 backdrop-blur-sm shadow-md'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
+
             {/* Logo */}
             <div
               className="flex-shrink-0 cursor-pointer transform transition-all duration-300 hover:scale-105 active:scale-95 z-50"
@@ -111,7 +101,7 @@ const Navbar = () => {
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-8">
               <button
-                onClick={() => scrollToSection('home')}
+                onClick={() => navigate("/")}
                 className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
               >
                 Home
@@ -134,11 +124,18 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
 
-              {/* Services Dropdown */}
+              {/* Services Dropdown FIXED */}
               <div
                 className="relative"
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
+                onMouseEnter={() => {
+                  if (closeTimeout.current) clearTimeout(closeTimeout.current);
+                  setIsServicesOpen(true);
+                }}
+                onMouseLeave={() => {
+                  closeTimeout.current = setTimeout(() => {
+                    setIsServicesOpen(false);
+                  }, 150);
+                }}
               >
                 <button
                   className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 flex items-center gap-2 group"
@@ -157,10 +154,17 @@ const Navbar = () => {
                     : 'opacity-0 invisible -translate-y-2 scale-95 pointer-events-none'
                     }`}
                 >
-                  {['Web Development', 'Mobile Apps', 'Cloud Solutions', 'UI/UX Design', 'Digital Marketing', 'Consulting'].map((service, index) => (
+                  {[
+                    'Web Development',
+                    'Mobile Apps',
+                    'Cloud Solutions',
+                    'UI/UX Design',
+                    'Digital Marketing',
+                    'Consulting'
+                  ].map((service, index) => (
                     <button
                       key={index}
-                      onClick={() => scrollToSection('services')}
+                      onClick={() => navigate("/service-details")}
                       className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 border-b border-gray-100 last:border-b-0 hover:pl-6"
                     >
                       {service}
@@ -191,11 +195,7 @@ const Navbar = () => {
               className="lg:hidden text-gray-700 p-2 transform transition-all duration-200 hover:scale-110 active:scale-95 z-50"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -254,7 +254,14 @@ const Navbar = () => {
                 }`}
             >
               <div className="ml-4 mt-1 space-y-1 border-l-2 border-gray-200 pl-4">
-                {['Web Development', 'Mobile Apps', 'Cloud Solutions', 'UI/UX Design', 'Digital Marketing', 'Consulting'].map((service, index) => (
+                {[
+                  'Web Development',
+                  'Mobile Apps',
+                  'Cloud Solutions',
+                  'UI/UX Design',
+                  'Digital Marketing',
+                  'Consulting'
+                ].map((service, index) => (
                   <button
                     key={index}
                     onClick={() => scrollToSection('services')}

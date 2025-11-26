@@ -104,9 +104,9 @@ const ServiceDetailPage = () => {
   const Icon = serviceData.icon;
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 pt-20">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 overflow-hidden">
+      <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/50 via-slate-950 to-purple-950/50" />
         <div
