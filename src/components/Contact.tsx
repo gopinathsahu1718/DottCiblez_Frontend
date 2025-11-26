@@ -66,7 +66,7 @@ function Contact() {
                 </div>
                 <div className="detail-content">
                   <h4>Email Us</h4>
-                  <p>info@dottciblez.com</p>
+                  <p><a href="mailto:info@dottciblez.com">info@dottciblez.com</a></p>
                 </div>
               </div>
 

@@ -136,8 +136,8 @@ const Footer = () => {
               <li className="flex items-start gap-2 sm:gap-3">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-xs sm:text-sm">info@dottciblez.com</p>
-                  <p className="text-xs sm:text-sm">support@dottciblez.com</p>
+                  <p className="text-xs sm:text-sm"><a href="mailto:info@dottciblez.com">info@dottciblez.com</a></p>
+                  <p className="text-xs sm:text-sm"><a href="mailto:support@dottciblez.com">support@dottciblez.com</a></p>
                 </div>
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
