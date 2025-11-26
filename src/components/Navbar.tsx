@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logo from '../assets/logo.png';
 import { useNavigate } from "react-router-dom";
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,10 +9,8 @@ const Navbar = () => {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
   const navigate = useNavigate();
-
-  // NEW: For hover delay close
+  // For hover delay close
   const closeTimeout = useRef(null);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -21,14 +18,12 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMobileMenuOpen]);
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024 && isMobileMenuOpen) {
@@ -38,17 +33,44 @@ const Navbar = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
-
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMobileMenuOpen(false);
-      setIsServicesOpen(false);
-      setIsMobileServicesOpen(false);
+    // Close mobile menu immediately
+    setIsMobileMenuOpen(false);
+    setIsServicesOpen(false);
+    setIsMobileServicesOpen(false);
+    // Check if we're on the home page
+    if (window.location.pathname === '/') {
+      // We're on home, just scroll
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // We're on another page, navigate to home first
+      navigate('/');
+      // Wait for navigation and DOM to update, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     }
   };
-
+  const handleHomeClick = () => {
+    setIsMobileMenuOpen(false);
+    setIsServicesOpen(false);
+    setIsMobileServicesOpen(false);
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const handleServiceClick = () => {
+    // Close all menus and dropdowns
+    setIsServicesOpen(false);
+    setIsMobileServicesOpen(false);
+    setIsMobileMenuOpen(false);
+    navigate("/service-details");
+  };
   return (
     <>
       <style>{`
@@ -56,32 +78,30 @@ const Navbar = () => {
           from { opacity: 0; }
           to { opacity: 1; }
         }
-        
+       
         @keyframes slideInRight {
           from { transform: translateX(100%); }
           to { transform: translateX(0); }
         }
-        
+       
         .mobile-menu-enter {
           animation: slideInRight 0.3s ease-out;
         }
-        
+       
         .overlay-enter {
           animation: fadeIn 0.3s ease;
         }
       `}</style>
-
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white/98 backdrop-blur-md shadow-lg' : 'bg-white/95 backdrop-blur-sm shadow-md'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-
             {/* Logo */}
             <div
               className="flex-shrink-0 cursor-pointer transform transition-all duration-300 hover:scale-105 active:scale-95 z-50"
-              onClick={() => scrollToSection('home')}
+              onClick={handleHomeClick}
             >
               {!logoError ? (
                 <img
@@ -97,17 +117,15 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-8">
               <button
-                onClick={() => navigate("/")}
+                onClick={handleHomeClick}
                 className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
               >
                 Home
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
-
               <button
                 onClick={() => scrollToSection('about')}
                 className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
@@ -115,7 +133,6 @@ const Navbar = () => {
                 About Us
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
-
               <button
                 onClick={() => scrollToSection('team')}
                 className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
@@ -123,8 +140,7 @@ const Navbar = () => {
                 Our Team
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
-
-              {/* Services Dropdown FIXED */}
+              {/* Services Dropdown */}
               <div
                 className="relative"
                 onMouseEnter={() => {
@@ -147,7 +163,6 @@ const Navbar = () => {
                   />
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                 </button>
-
                 <div
                   className={`absolute top-full left-0 mt-4 w-56 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 origin-top ${isServicesOpen
                     ? 'opacity-100 visible translate-y-0 scale-100'
@@ -164,7 +179,7 @@ const Navbar = () => {
                   ].map((service, index) => (
                     <button
                       key={index}
-                      onClick={() => navigate("/service-details")}
+                      onClick={handleServiceClick}
                       className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 border-b border-gray-100 last:border-b-0 hover:pl-6"
                     >
                       {service}
@@ -172,7 +187,6 @@ const Navbar = () => {
                   ))}
                 </div>
               </div>
-
               <button
                 onClick={() => scrollToSection('achievements')}
                 className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
@@ -180,7 +194,6 @@ const Navbar = () => {
                 Achievements
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
-
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group relative"
@@ -189,7 +202,6 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
             </div>
-
             {/* Mobile Menu Button */}
             <button
               className="lg:hidden text-gray-700 p-2 transform transition-all duration-200 hover:scale-110 active:scale-95 z-50"
@@ -200,7 +212,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div
@@ -208,7 +219,6 @@ const Navbar = () => {
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
-
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-2xl z-40 lg:hidden transform transition-transform duration-300 ease-out overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0 mobile-menu-enter' : 'translate-x-full'
@@ -216,26 +226,23 @@ const Navbar = () => {
       >
         <div className="pt-24 pb-8 px-6 space-y-1">
           <button
-            onClick={() => scrollToSection('home')}
+            onClick={handleHomeClick}
             className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
           >
             Home
           </button>
-
           <button
             onClick={() => scrollToSection('about')}
             className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
           >
             About Us
           </button>
-
           <button
             onClick={() => scrollToSection('team')}
             className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
           >
             Our Team
           </button>
-
           {/* Mobile Services Dropdown */}
           <div>
             <button
@@ -248,7 +255,6 @@ const Navbar = () => {
                   }`}
               />
             </button>
-
             <div
               className={`overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
@@ -264,7 +270,7 @@ const Navbar = () => {
                 ].map((service, index) => (
                   <button
                     key={index}
-                    onClick={() => scrollToSection('services')}
+                    onClick={handleServiceClick}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-md transition-all duration-200"
                   >
                     {service}
@@ -273,14 +279,12 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-
           <button
             onClick={() => scrollToSection('achievements')}
             className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
           >
             Achievements
           </button>
-
           <button
             onClick={() => scrollToSection('contact')}
             className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
@@ -292,5 +296,4 @@ const Navbar = () => {
     </>
   );
 };
-
 export default Navbar;

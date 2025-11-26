@@ -1,5 +1,5 @@
 import { Monitor, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Code, Smartphone, Globe, MessageSquare, Star, Award } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Example service data - you can dynamically load this based on route
 const serviceData = {
@@ -102,6 +102,10 @@ const serviceData = {
 const ServiceDetailPage = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const Icon = serviceData.icon;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-950 pt-20">
