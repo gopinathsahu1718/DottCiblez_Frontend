@@ -77,9 +77,12 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -153,9 +156,12 @@
 }
 
 @keyframes dotFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
   }
@@ -757,7 +763,8 @@
   .stat-number {
     font-size: 1.8rem;
   }
-  .stat-label{
+
+  .stat-label {
     font-size: 0.8rem;
   }
 
@@ -876,7 +883,8 @@
   .stat-number {
     font-size: 2rem;
   }
-  .stat-label{
+
+  .stat-label {
     font-size: .8rem;
   }
 
@@ -930,9 +938,11 @@
   .circle-text {
     font-size: 4.5px;
   }
-  .about-section{
+
+  .about-section {
     padding-bottom: 20px;
   }
+
   .about-main-heading {
     font-size: 1.45rem;
   }
@@ -944,30 +954,32 @@
   .section-title-small {
     font-size: 1.45rem;
   }
-  .stats-section{
+
+  .stats-section {
     padding: 15px !important;
   }
-  .stats-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-}
 
-.stats-section::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -5%;
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.13);
-  border-radius: 50%;
-}
+  .stats-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+  }
+
+  .stats-section::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+  }
 
   .feature-card {
     padding: 20px;
@@ -976,7 +988,8 @@
   .stat-number {
     font-size: 1.5rem;
   }
-  .stat-label{
+
+  .stat-label {
     font-size: 0.7rem;
   }
 
@@ -1072,5 +1085,22 @@
 
   .cta-heading {
     font-size: 2.8rem;
+  }
+}
+
+
+/* Prevent horizontal overflow in About section */
+@media (max-width: 768px) {
+  .about-section {
+    overflow-x: hidden !important;
+  }
+
+  .about-container {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .about-years-badge {
+    overflow: hidden !important;
   }
 }

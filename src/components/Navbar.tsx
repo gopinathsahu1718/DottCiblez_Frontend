@@ -11,11 +11,34 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
+  // Close menu when window is resized to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobileMenuOpen]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -23,196 +46,243 @@ const Navbar = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsMobileMenuOpen(false);
       setIsServicesOpen(false);
+      setIsMobileServicesOpen(false);
     }
   };
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => scrollToSection('home')}>
-            {!logoError ? (
-              <img 
-                src={logo}
-                alt="DottCiblez Logo" 
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
-                onError={() => setLogoError(true)}
-              />
-            ) : (
-              <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                DottCiblez
-              </div>
-            )}
-          </div>
+    <>
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        
+        @keyframes slideInRight {
+          from {
+            transform: translateX(100%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+        
+        .mobile-menu-enter {
+          animation: slideInRight 0.3s ease-out;
+        }
+        
+        .overlay-enter {
+          animation: fadeIn 0.3s ease;
+        }
+      `}</style>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <button
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled
+          ? 'bg-white/98 backdrop-blur-md shadow-lg'
+          : 'bg-white/95 backdrop-blur-sm shadow-md'
+          }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <div
+              className="flex-shrink-0 cursor-pointer transform transition-all duration-300 hover:scale-105 active:scale-95 z-50"
               onClick={() => scrollToSection('home')}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
             >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-            >
-              About Us
-            </button>
-            <button
-              onClick={() => scrollToSection('team')}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-            >
-              Our Team
-            </button>
-
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-            >
-              <button
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium flex items-center gap-1"
-              >
-                Services
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              <div
-                className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 border border-gray-100 transition-all duration-200 ${
-                  isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-                }`}
-              >
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                >
-                  Web Development
-                </button>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                >
-                  Mobile App Development
-                </button>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                >
-                  UI/UX Design
-                </button>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                >
-                  E-Commerce Solutions
-                </button>
-              </div>
-            </div>
-
-            <button
-              onClick={() => scrollToSection('achievements')}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-            >
-              Achievements
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2.5 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200 font-medium"
-            >
-              Contact
-            </button>
-          </div>
-
-          <button
-            className="md:hidden text-gray-700"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </div>
-
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
-          <div className="px-4 pt-2 pb-4 space-y-2">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 rounded-lg transition-colors"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 rounded-lg transition-colors"
-            >
-              About Us
-            </button>
-            <button
-              onClick={() => scrollToSection('team')}
-              className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 rounded-lg transition-colors"
-            >
-              Our Team
-            </button>
-            
-            <div>
-              <button
-                onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                className="flex items-center justify-between w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 rounded-lg transition-colors"
-              >
-                Services
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {isMobileServicesOpen && (
-                <div className="mt-1 ml-4 space-y-1">
-                  <button
-                    onClick={() => scrollToSection('services')}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors"
-                  >
-                    Web Development
-                  </button>
-                  <button
-                    onClick={() => scrollToSection('services')}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors"
-                  >
-                    Mobile App Development
-                  </button>
-                  <button
-                    onClick={() => scrollToSection('services')}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors"
-                  >
-                    UI/UX Design
-                  </button>
-                  <button
-                    onClick={() => scrollToSection('services')}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors"
-                  >
-                    E-Commerce Solutions
-                  </button>
+              {!logoError ? (
+                <img
+                  src={logo}
+                  alt="DottCiblez Logo"
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-opacity duration-300 hover:opacity-90"
+                  onError={() => setLogoError(true)}
+                />
+              ) : (
+                <div className="text-xl sm:text-2xl font-bold">
+                  <span className="text-gray-800">Dott</span>
+                  <span className="text-blue-600">Ciblez</span>
                 </div>
               )}
             </div>
 
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-8">
+              <button
+                onClick={() => scrollToSection('home')}
+                className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
+              >
+                Home
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </button>
+
+              <button
+                onClick={() => scrollToSection('about')}
+                className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
+              >
+                About Us
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </button>
+
+              <button
+                onClick={() => scrollToSection('team')}
+                className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
+              >
+                Our Team
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </button>
+
+              {/* Services Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <button
+                  className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 flex items-center gap-2 group"
+                >
+                  Services
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''
+                      }`}
+                  />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                </button>
+
+                <div
+                  className={`absolute top-full left-0 mt-4 w-56 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 origin-top ${isServicesOpen
+                    ? 'opacity-100 visible translate-y-0 scale-100'
+                    : 'opacity-0 invisible -translate-y-2 scale-95 pointer-events-none'
+                    }`}
+                >
+                  {['Web Development', 'Mobile Apps', 'Cloud Solutions', 'UI/UX Design', 'Digital Marketing', 'Consulting'].map((service, index) => (
+                    <button
+                      key={index}
+                      onClick={() => scrollToSection('services')}
+                      className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 border-b border-gray-100 last:border-b-0 hover:pl-6"
+                    >
+                      {service}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                onClick={() => scrollToSection('achievements')}
+                className="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group"
+              >
+                Achievements
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </button>
+
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group relative"
+              >
+                Contact
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
             <button
-              onClick={() => scrollToSection('achievements')}
-              className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 rounded-lg transition-colors"
+              className="lg:hidden text-gray-700 p-2 transform transition-all duration-200 hover:scale-110 active:scale-95 z-50"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              Achievements
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="block w-full text-left px-4 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg transition-colors"
-            >
-              Contact
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden overlay-enter"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
       )}
-    </nav>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-white shadow-2xl z-40 lg:hidden transform transition-transform duration-300 ease-out overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0 mobile-menu-enter' : 'translate-x-full'
+          }`}
+      >
+        <div className="pt-24 pb-8 px-6 space-y-1">
+          <button
+            onClick={() => scrollToSection('home')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
+          >
+            Home
+          </button>
+
+          <button
+            onClick={() => scrollToSection('about')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
+          >
+            About Us
+          </button>
+
+          <button
+            onClick={() => scrollToSection('team')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
+          >
+            Our Team
+          </button>
+
+          {/* Mobile Services Dropdown */}
+          <div>
+            <button
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+              className="flex items-center justify-between w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
+            >
+              Services
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''
+                  }`}
+              />
+            </button>
+
+            <div
+              className={`overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+            >
+              <div className="ml-4 mt-1 space-y-1 border-l-2 border-gray-200 pl-4">
+                {['Web Development', 'Mobile Apps', 'Cloud Solutions', 'UI/UX Design', 'Digital Marketing', 'Consulting'].map((service, index) => (
+                  <button
+                    key={index}
+                    onClick={() => scrollToSection('services')}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-md transition-all duration-200"
+                  >
+                    {service}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <button
+            onClick={() => scrollToSection('achievements')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
+          >
+            Achievements
+          </button>
+
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 
