@@ -80,7 +80,6 @@ section {
 
 /* Ensure container elements don't overflow */
 .container,
-.about-container,
 .statistics-container,
 .team-container {
   max-width: 100% !important;
@@ -188,7 +187,7 @@ section {
   }
 
   /* Fix padding that might cause overflow */
-  .about-container,
+
   .statistics-container,
   .team-container,
   .container {

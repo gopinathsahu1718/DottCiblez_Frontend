@@ -2,7 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import ServiceDetailPage from './pages/ServiceDetailPage';
+import WebDevelopment from './pages/WebDevelopment';
+import SoftwareDesign from './pages/SoftwareDesign';
+import SocialMediaAppDevelopment from './pages/SocialMediaAppDevelopment';
+import MarketingServices from './pages/MarketingServices';
+import DatacenterColocation from './pages/DatacenterColocation';
+import ComputerSystemsCommunicationEquipment from './pages/ComputerSystemsCommunicationEquipment';
 
 function App() {
   return (
@@ -11,7 +16,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/service-details" element={<ServiceDetailPage />} />
+          <Route path="/web-development-service" element={<WebDevelopment />} />
+          <Route path="/software-design-service" element={<SoftwareDesign />} />
+          <Route path="/social-media-development-service" element={<SocialMediaAppDevelopment />} />
+          <Route path="/social-media-marketing-service" element={<MarketingServices />} />
+          <Route path="/datacenter-colocation-service" element={<DatacenterColocation />} />
+          <Route path="/csce-service" element={<ComputerSystemsCommunicationEquipment />} />
         </Routes>
         <Footer />
       </div>

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logo from '../assets/logo.png';
 import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,6 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   // For hover delay close
   const closeTimeout = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -18,12 +20,14 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMobileMenuOpen]);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024 && isMobileMenuOpen) {
@@ -33,6 +37,7 @@ const Navbar = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
+
   const scrollToSection = (id) => {
     // Close mobile menu immediately
     setIsMobileMenuOpen(false);
@@ -57,6 +62,7 @@ const Navbar = () => {
       }, 100);
     }
   };
+
   const handleHomeClick = () => {
     setIsMobileMenuOpen(false);
     setIsServicesOpen(false);
@@ -64,13 +70,24 @@ const Navbar = () => {
     navigate('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  const handleServiceClick = () => {
+
+  const handleServiceNavigation = (path) => {
     // Close all menus and dropdowns
     setIsServicesOpen(false);
     setIsMobileServicesOpen(false);
     setIsMobileMenuOpen(false);
-    navigate("/service-details");
+    navigate(path);
   };
+
+  const services = [
+    { name: 'Web Development', path: '/web-development-service' },
+    { name: 'Software Design', path: '/software-design-service' },
+    { name: 'Social Media Applications Development & Management', path: '/social-media-development-service' },
+    { name: 'Social Media Marketing', path: '/social-media-marketing-service' },
+    { name: 'Datacentre Colocation Services', path: '/datacenter-colocation-service' },
+    { name: 'Computer Systems & Communication Equipment', path: '/csce-service' }
+  ];
+
   return (
     <>
       <style>{`
@@ -164,25 +181,18 @@ const Navbar = () => {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                 </button>
                 <div
-                  className={`absolute top-full left-0 mt-4 w-56 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 origin-top ${isServicesOpen
+                  className={`absolute top-full left-0 mt-4 w-64 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 origin-top ${isServicesOpen
                     ? 'opacity-100 visible translate-y-0 scale-100'
                     : 'opacity-0 invisible -translate-y-2 scale-95 pointer-events-none'
                     }`}
                 >
-                  {[
-                    'Web Development',
-                    'Mobile Apps',
-                    'Cloud Solutions',
-                    'UI/UX Design',
-                    'Digital Marketing',
-                    'Consulting'
-                  ].map((service, index) => (
+                  {services.map((service, index) => (
                     <button
                       key={index}
-                      onClick={handleServiceClick}
+                      onClick={() => handleServiceNavigation(service.path)}
                       className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 border-b border-gray-100 last:border-b-0 hover:pl-6"
                     >
-                      {service}
+                      {service.name}
                     </button>
                   ))}
                 </div>
@@ -260,20 +270,13 @@ const Navbar = () => {
                 }`}
             >
               <div className="ml-4 mt-1 space-y-1 border-l-2 border-gray-200 pl-4">
-                {[
-                  'Web Development',
-                  'Mobile Apps',
-                  'Cloud Solutions',
-                  'UI/UX Design',
-                  'Digital Marketing',
-                  'Consulting'
-                ].map((service, index) => (
+                {services.map((service, index) => (
                   <button
                     key={index}
-                    onClick={handleServiceClick}
+                    onClick={() => handleServiceNavigation(service.path)}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-md transition-all duration-200"
                   >
-                    {service}
+                    {service.name}
                   </button>
                 ))}
               </div>
@@ -296,4 +299,5 @@ const Navbar = () => {
     </>
   );
 };
+
 export default Navbar;

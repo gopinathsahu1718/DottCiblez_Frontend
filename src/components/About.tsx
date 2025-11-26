@@ -92,10 +92,10 @@ const About: React.FC = () => {
         <h3 className="about-section-label">Top Software Company in Dubai</h3>
 
         <p className="about-description">
-          When seeking the best software company in Dubai, the United Arab Emirates, the majority 
-          of us Google "software development company Dubai." Just Google Dott Ciblez Technologies 
-          the next time. One of the best mobile app developers in Dubai, United Arab Emirates, 
-          specializing in software, online, and mobile app development, is Dott Ciblez Technologies. 
+          When seeking the best software company in Dubai, the United Arab Emirates, the majority
+          of us Google "software development company Dubai." Just Google Dott Ciblez Technologies
+          the next time. One of the best mobile app developers in Dubai, United Arab Emirates,
+          specializing in software, online, and mobile app development, is Dott Ciblez Technologies.
           We work hard to provide best-in-class service to businesses of all sizes.
         </p>
 
@@ -103,12 +103,12 @@ const About: React.FC = () => {
           <div className="about-years-badge">
             <div className="years-number">5</div>
             <div className="years-circle">
-              <img 
-              src={logo} 
-              alt="Dott Ciblez Logo" 
-              className="badge-logo" 
-              style={{ height: '50px', width: 'auto' }}
-            />
+              <img
+                src={logo}
+                alt="Dott Ciblez Logo"
+                className="badge-logo"
+                style={{ height: '50px', width: 'auto' }}
+              />
               <div className="circle-text">YEARS OF EXCELLENCE</div>
             </div>
             <div className="decorative-dots">
@@ -125,11 +125,11 @@ const About: React.FC = () => {
             </h2>
 
             <p className="about-description">
-              We provide software solutions that are user-friendly. The greatest outcomes for your 
-              organization are produced by our software tools. Being the best software company in Dubai, 
-              United Arab Emirates, we combine our knowledge and experience to produce the best apps 
-              and software solutions for your organization. Our talented and passionate software and 
-              creative team create top-notch front-end and back-end systems for a variety of uses in 
+              We provide software solutions that are user-friendly. The greatest outcomes for your
+              organization are produced by our software tools. Being the best software company in Dubai,
+              United Arab Emirates, we combine our knowledge and experience to produce the best apps
+              and software solutions for your organization. Our talented and passionate software and
+              creative team create top-notch front-end and back-end systems for a variety of uses in
               order to deliver excellent solutions.
             </p>
 

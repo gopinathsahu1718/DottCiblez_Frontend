@@ -1,108 +1,107 @@
-import { Monitor, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Code, Smartphone, Globe, MessageSquare, Star, Award } from 'lucide-react';
+import { Palette, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Layers, Figma, Sparkles, Eye, Star, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-// Example service data - you can dynamically load this based on route
+// Software Design service data
 const serviceData = {
-  icon: Monitor,
-  title: "Web Development",
-  number: "01",
-  tagline: "Building Digital Experiences That Drive Results",
-  description: "Transform your digital presence with cutting-edge web solutions. Our expert team delivers custom websites and web applications that combine stunning design with powerful functionality, ensuring your business stands out in the digital landscape.",
-  bgImage: "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  icon: Palette,
+  title: "Software Design",
+  number: "02",
+  tagline: "Crafting Intuitive Interfaces That Users Love",
+  description: "Elevate your digital products with exceptional design. Our talented design team creates user-centric interfaces that blend aesthetic excellence with seamless functionality, ensuring your software not only looks stunning but delivers an unforgettable user experience.",
+  bgImage: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
   highlights: [
-    { icon: Users, title: "10K+", subtitle: "Projects Delivered" },
-    { icon: Award, title: "98%", subtitle: "Client Satisfaction" },
-    { icon: TrendingUp, title: "250%", subtitle: "Avg. ROI Increase" },
-    { icon: Clock, title: "24/7", subtitle: "Support Available" }
+    { icon: Users, title: "500+", subtitle: "Designs Created" },
+    { icon: Award, title: "95%", subtitle: "User Satisfaction" },
+    { icon: TrendingUp, title: "180%", subtitle: "Engagement Boost" },
+    { icon: Clock, title: "2-4 Weeks", subtitle: "Typical Timeline" }
   ],
 
   features: [
     {
-      icon: Code,
-      title: "Custom Development",
-      description: "Tailored solutions built from scratch to meet your specific business requirements and scale with your growth."
+      icon: Eye,
+      title: "User Research",
+      description: "In-depth user research and analysis to understand your audience's needs, behaviors, and pain points for informed design decisions."
     },
     {
-      icon: Smartphone,
-      title: "Responsive Design",
-      description: "Flawless performance across all devices - desktop, tablet, and mobile with pixel-perfect precision."
+      icon: Layers,
+      title: "UI/UX Design",
+      description: "Beautiful, intuitive interfaces that prioritize user experience while maintaining brand consistency and modern design standards."
+    },
+    {
+      icon: Figma,
+      title: "Interactive Prototypes",
+      description: "High-fidelity prototypes that bring your vision to life, allowing you to test and validate before development begins."
+    },
+    {
+      icon: Sparkles,
+      title: "Design Systems",
+      description: "Comprehensive design systems with reusable components, ensuring consistency and efficiency across your entire product."
     },
     {
       icon: Zap,
-      title: "Lightning Fast",
-      description: "Optimized for speed with best practices in performance, ensuring quick load times and smooth interactions."
+      title: "Micro-interactions",
+      description: "Delightful animations and transitions that enhance user engagement and create memorable experiences."
     },
     {
       icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-level security protocols, SSL certificates, and regular updates to protect your digital assets."
-    },
-    {
-      icon: Globe,
-      title: "SEO Optimized",
-      description: "Built-in SEO best practices to ensure your website ranks high in search engines and attracts organic traffic."
-    },
-    {
-      icon: MessageSquare,
-      title: "Ongoing Support",
-      description: "Comprehensive maintenance and support packages to keep your website running smoothly 24/7."
+      title: "Accessibility First",
+      description: "WCAG-compliant designs that ensure your software is usable by everyone, regardless of abilities or disabilities."
     }
   ],
 
   process: [
     {
       step: "01",
-      title: "Discovery & Planning",
-      description: "We start by understanding your business goals, target audience, and technical requirements to create a comprehensive project roadmap."
+      title: "Research & Discovery",
+      description: "We begin with comprehensive user research, competitive analysis, and stakeholder interviews to understand your users, market positioning, and business objectives."
     },
     {
       step: "02",
-      title: "Design & Prototyping",
-      description: "Our design team creates stunning mockups and interactive prototypes that bring your vision to life before development begins."
+      title: "Wireframing & Architecture",
+      description: "Create low-fidelity wireframes and information architecture that map out user flows, content hierarchy, and core functionality structure."
     },
     {
       step: "03",
-      title: "Development & Testing",
-      description: "Expert developers build your solution using cutting-edge technologies, with rigorous testing at every stage."
+      title: "Visual Design & Prototyping",
+      description: "Transform wireframes into stunning high-fidelity designs with your brand identity, then build interactive prototypes for user testing."
     },
     {
       step: "04",
-      title: "Launch & Support",
-      description: "Smooth deployment to production with comprehensive training and ongoing support to ensure long-term success."
+      title: "Handoff & Support",
+      description: "Deliver complete design specifications, assets, and design systems to developers with ongoing support during implementation."
     }
   ],
 
   technologies: [
-    "React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Docker", "GraphQL"
+    "Figma", "Adobe XD", "Sketch", "InVision", "Principle", "Framer", "Zeplin", "Abstract"
   ],
 
   caseStudies: [
     {
-      company: "TechCorp Inc.",
-      industry: "SaaS",
-      result: "300% increase in conversions",
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600"
+      company: "HealthTrack Pro",
+      industry: "Healthcare",
+      result: "40% increase in user retention",
+      image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      company: "RetailPro",
-      industry: "E-commerce",
-      result: "2M+ monthly active users",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600"
+      company: "EduLearn Platform",
+      industry: "EdTech",
+      result: "5-star app store rating",
+      image: "https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      company: "FinanceHub",
-      industry: "Fintech",
-      result: "50% reduction in bounce rate",
-      image: "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=600"
+      company: "BankEase Mobile",
+      industry: "Banking",
+      result: "65% faster task completion",
+      image: "https://images.pexels.com/photos/6963098/pexels-photo-6963098.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ]
 };
 
-const ServiceDetailPage = () => {
+const SoftwareDesign = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const Icon = serviceData.icon;
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -112,7 +111,7 @@ const ServiceDetailPage = () => {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/50 via-slate-950 to-purple-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-950/50 via-slate-950 to-pink-950/50" />
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -121,7 +120,7 @@ const ServiceDetailPage = () => {
             backgroundPosition: 'center'
           }}
         />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDU5LCAxMzAsIDI0NiwgMC4xKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDIxNiwgMTgwLCAyNTQsIDAuMSkiLz48L2c+PC9zdmc+')]  opacity-20" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
@@ -130,8 +129,8 @@ const ServiceDetailPage = () => {
               <span className="text-6xl sm:text-7xl font-bold text-slate-800">
                 {serviceData.number}
               </span>
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center border border-blue-500/30">
-                <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-blue-400" />
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
+                <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-purple-400" />
               </div>
             </div>
 
@@ -139,7 +138,7 @@ const ServiceDetailPage = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               {serviceData.title}
             </h1>
-            <p className="text-xl sm:text-2xl text-blue-400 font-medium mb-6 sm:mb-8">
+            <p className="text-xl sm:text-2xl text-purple-400 font-medium mb-6 sm:mb-8">
               {serviceData.tagline}
             </p>
             <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-8 sm:mb-10">
@@ -148,7 +147,7 @@ const ServiceDetailPage = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300">
+              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300">
                 Get Started
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -168,7 +167,7 @@ const ServiceDetailPage = () => {
               const HighlightIcon = item.icon;
               return (
                 <div key={index} className="text-center">
-                  <HighlightIcon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                  <HighlightIcon className="w-8 h-8 text-purple-400 mx-auto mb-3" />
                   <div className="text-3xl sm:text-4xl font-bold text-white mb-1">
                     {item.title}
                   </div>
@@ -190,7 +189,7 @@ const ServiceDetailPage = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 ${activeTab === tab
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                   : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-800'
                   }`}
               >
@@ -213,10 +212,10 @@ const ServiceDetailPage = () => {
                       key={index}
                       className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300"
                     >
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
                       <div className="relative bg-slate-900 rounded-2xl p-6">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center border border-blue-500/30 mb-4">
-                          <FeatureIcon className="w-6 h-6 text-blue-400" />
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30 mb-4">
+                          <FeatureIcon className="w-6 h-6 text-purple-400" />
                         </div>
                         <h3 className="text-lg font-bold text-white mb-2">
                           {feature.title}
@@ -236,7 +235,7 @@ const ServiceDetailPage = () => {
           {activeTab === 'process' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Our Development Process
+                Our Design Process
               </h2>
               <div className="space-y-6">
                 {serviceData.process.map((step, index) => (
@@ -249,7 +248,7 @@ const ServiceDetailPage = () => {
                         {step.step}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                           {step.title}
                         </h3>
                         <p className="text-slate-400 leading-relaxed">
@@ -268,14 +267,14 @@ const ServiceDetailPage = () => {
           {activeTab === 'technologies' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Technologies We Use
+                Tools & Software We Use
               </h2>
               <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-8 sm:p-12">
                 <div className="flex flex-wrap gap-4">
                   {serviceData.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-6 py-3 bg-slate-800/50 text-slate-300 rounded-xl border border-slate-700/50 font-medium hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300"
+                      className="px-6 py-3 bg-slate-800/50 text-slate-300 rounded-xl border border-slate-700/50 font-medium hover:border-purple-500/50 hover:text-purple-400 transition-all duration-300"
                     >
                       {tech}
                     </span>
@@ -295,7 +294,7 @@ const ServiceDetailPage = () => {
               Success Stories
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              See how we've helped businesses like yours achieve remarkable results
+              See how our design solutions have transformed user experiences and driven business growth
             </p>
           </div>
 
@@ -305,13 +304,13 @@ const ServiceDetailPage = () => {
                 key={index}
                 className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300"
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
                 <div className="relative bg-slate-900 rounded-2xl overflow-hidden">
                   <div
                     className="h-48 bg-cover bg-center"
                     style={{ backgroundImage: `url(${study.image})` }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t to-transparent" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -323,10 +322,10 @@ const ServiceDetailPage = () => {
                     <h3 className="text-xl font-bold text-white mb-2">
                       {study.company}
                     </h3>
-                    <p className="text-blue-400 font-semibold mb-4">
+                    <p className="text-purple-400 font-semibold mb-4">
                       {study.result}
                     </p>
-                    <button className="text-sm text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-2">
+                    <button className="text-sm text-slate-400 hover:text-purple-400 transition-colors flex items-center gap-2">
                       Read Case Study
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -342,21 +341,21 @@ const ServiceDetailPage = () => {
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600" />
             <div className="relative p-12 sm:p-16 lg:p-20 text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
+                Ready to Create Amazing Experiences?
               </h2>
               <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Let's discuss how our {serviceData.title.toLowerCase()} services can help you achieve your goals
+                Let's discuss how our {serviceData.title.toLowerCase()} services can elevate your product and delight your users
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
                   Schedule a Consultation
                   <ArrowRight className="w-5 h-5" />
                 </button>
                 <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  Download Brochure
+                  View Design Portfolio
                 </button>
               </div>
             </div>
@@ -367,4 +366,4 @@ const ServiceDetailPage = () => {
   );
 };
 
-export default ServiceDetailPage;
+export default SoftwareDesign;
