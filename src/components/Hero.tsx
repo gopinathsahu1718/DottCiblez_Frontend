@@ -59,14 +59,15 @@ const Hero = () => {
 
   const slide = slides[currentSlide];
 
+
   return (
-    <div id="home" className="relative h-screen min-h-[500px] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+    <div id="home" className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 pt-20">
       {/* Background gradient */}
       <div className={`absolute inset-0 bg-gradient-to-r ${slide.gradient} opacity-10 transition-all duration-1000`} />
 
       {/* Main Content */}
-      <div className="relative h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 sm:py-20">
+      <div className="relative h-full flex items-center min-h-[calc(100vh-5rem)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Text Content */}
             <div className="text-center md:text-left space-y-4 sm:space-y-6 order-2 md:order-1">
