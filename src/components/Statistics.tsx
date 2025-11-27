@@ -84,7 +84,7 @@ const Statistics = () => {
     <section ref={sectionRef} className="statistics-section">
       <div className="statistics-container">
         <div className="statistics-header">
-          <h2 className="statistics-title">
+          <h2 className="statistics-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
             Our Achievements
           </h2>
           <p className="statistics-subtitle">
@@ -98,9 +98,9 @@ const Statistics = () => {
               <div key={index} className="stat-card">
                 <div className="stat-icon-wrapper">
                   <div className="stat-icon-container">
-                    <img 
-                      src={stat.icon} 
-                      alt={stat.label} 
+                    <img
+                      src={stat.icon}
+                      alt={stat.label}
                       className="stat-icon-image"
                     />
                   </div>

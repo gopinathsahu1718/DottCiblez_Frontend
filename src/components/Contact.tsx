@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 function Contact() {
@@ -14,8 +13,6 @@ function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -24,47 +21,13 @@ function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSending(true);
-    setError('');
-
-    // EmailJS configuration
-    const serviceId = 'service_4i1nq6t'; // Replace with your EmailJS service ID
-    const templateId = 'template_xsq0kcx'; // Replace with your EmailJS template ID
-    const publicKey = 'xKt5FIV8spzF_UTfH'; // Replace with your EmailJS public key
-
-    // Template parameters that match your EmailJS template
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      phone: formData.phone,
-      subject: formData.subject,
-      message: formData.message,
-      to_name: 'DottCiblez Team', // Optional: customize this
-    };
-
-    try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-
-      setSubmitted(true);
-      setSending(false);
-
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      }, 3000);
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      setError('Failed to send message. Please try again.');
-      setSending(false);
-    }
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    }, 3000);
   };
 
   return (
@@ -77,7 +40,7 @@ function Contact() {
           transition={{ duration: 0.6 }}
           className="section-header"
         >
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Get In Touch</h2>
           <p className="section-subtitle">
             Have a project in mind? We'd love to hear from you
           </p>
@@ -147,16 +110,6 @@ function Contact() {
               </motion.div>
             )}
 
-            {error && (
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="error-message"
-              >
-                {error}
-              </motion.div>
-            )}
-
             <div className="form-row">
               <div className="form-group">
                 <input
@@ -167,7 +120,6 @@ function Contact() {
                   onChange={handleChange}
                   required
                   className="form-input"
-                  disabled={sending}
                 />
               </div>
               <div className="form-group">
@@ -179,7 +131,6 @@ function Contact() {
                   onChange={handleChange}
                   required
                   className="form-input"
-                  disabled={sending}
                 />
               </div>
             </div>
@@ -193,7 +144,6 @@ function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="form-input"
-                  disabled={sending}
                 />
               </div>
               <div className="form-group">
@@ -205,7 +155,6 @@ function Contact() {
                   onChange={handleChange}
                   required
                   className="form-input"
-                  disabled={sending}
                 />
               </div>
             </div>
@@ -219,12 +168,11 @@ function Contact() {
                 required
                 rows="6"
                 className="form-input form-textarea"
-                disabled={sending}
               />
             </div>
 
-            <button type="submit" className="form-submit" disabled={sending}>
-              {sending ? 'Sending...' : 'Send Message'} <FaPaperPlane />
+            <button type="submit" className="form-submit">
+              Send Message <FaPaperPlane />
             </button>
           </motion.form>
         </div>

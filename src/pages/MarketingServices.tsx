@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 const serviceData = {
   icon: Share2,
   title: "Social Media Marketing",
-  number: "03",
+  // number: "03",
   tagline: "Amplify Your Brand Voice Across Digital Channels",
   description: "Drive measurable business growth through strategic social media marketing. Our comprehensive approach combines data-driven insights, creative content, and proven engagement strategies to build authentic connections with your audience and convert followers into loyal customers.",
   bgImage: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -121,7 +121,7 @@ const MarketingServices = () => {
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/50 via-slate-950 to-cyan-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-950/50 via-slate-950 to-pink-950/50" />
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -130,17 +130,17 @@ const MarketingServices = () => {
             backgroundPosition: 'center'
           }}
         />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDE2LCAxODUsIDE5OSwgMC4xKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDE2OCwgODUsIDE5OSwgMC4xKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             {/* Service Number & Icon */}
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-6xl sm:text-7xl font-bold text-slate-800">
+              {/* <span className="text-6xl sm:text-7xl font-bold text-slate-800">
                 {serviceData.number}
-              </span>
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center border border-emerald-500/30">
-                <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-400" />
+              </span> */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
+                <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-purple-400" />
               </div>
             </div>
 
@@ -148,7 +148,7 @@ const MarketingServices = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               {serviceData.title}
             </h1>
-            <p className="text-xl sm:text-2xl text-emerald-400 font-medium mb-6 sm:mb-8">
+            <p className="text-xl sm:text-2xl text-purple-400 font-medium mb-6 sm:mb-8">
               {serviceData.tagline}
             </p>
             <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-8 sm:mb-10">
@@ -157,7 +157,7 @@ const MarketingServices = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-emerald-500/50 hover:scale-105 transition-all duration-300">
+              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300">
                 Get Started
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -177,7 +177,7 @@ const MarketingServices = () => {
               const HighlightIcon = item.icon;
               return (
                 <div key={index} className="text-center">
-                  <HighlightIcon className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+                  <HighlightIcon className="w-8 h-8 text-purple-400 mx-auto mb-3" />
                   <div className="text-3xl sm:text-4xl font-bold text-white mb-1">
                     {item.title}
                   </div>
@@ -199,7 +199,7 @@ const MarketingServices = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 ${activeTab === tab
-                  ? 'bg-gradient-to-r from-emerald-600 to-cyan-600 text-white'
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                   : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-800'
                   }`}
               >
@@ -222,10 +222,10 @@ const MarketingServices = () => {
                       key={index}
                       className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300"
                     >
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
                       <div className="relative bg-slate-900 rounded-2xl p-6">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center border border-emerald-500/30 mb-4">
-                          <FeatureIcon className="w-6 h-6 text-emerald-400" />
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30 mb-4">
+                          <FeatureIcon className="w-6 h-6 text-purple-400" />
                         </div>
                         <h3 className="text-lg font-bold text-white mb-2">
                           {feature.title}
@@ -258,7 +258,7 @@ const MarketingServices = () => {
                         {step.step}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                           {step.title}
                         </h3>
                         <p className="text-slate-400 leading-relaxed">
@@ -285,9 +285,9 @@ const MarketingServices = () => {
                     key={index}
                     className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300"
                   >
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
                     <div className="relative bg-slate-900 rounded-2xl p-6">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
                         {platform.name}
                       </h3>
                       <p className="text-sm text-slate-400 leading-relaxed">
@@ -307,34 +307,34 @@ const MarketingServices = () => {
                 Enterprise-Grade Marketing Tools
               </h2>
               <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-8 sm:p-12">
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 mb-12">
                   {serviceData.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-6 py-3 bg-slate-800/50 text-slate-300 rounded-xl border border-slate-700/50 font-medium hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300"
+                      className="px-6 py-3 bg-slate-800/50 text-slate-300 rounded-xl border border-slate-700/50 font-medium hover:border-purple-500/50 hover:text-purple-400 transition-all duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-              </div>
 
-              {/* Additional Info */}
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
-                  <Shield className="w-10 h-10 text-emerald-400 mb-4" />
-                  <h3 className="text-lg font-bold text-white mb-2">Brand Safety</h3>
-                  <p className="text-sm text-slate-400">Advanced monitoring and protection protocols to safeguard your brand reputation across all platforms.</p>
-                </div>
-                <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
-                  <BarChart3 className="w-10 h-10 text-emerald-400 mb-4" />
-                  <h3 className="text-lg font-bold text-white mb-2">Data Analytics</h3>
-                  <p className="text-sm text-slate-400">Comprehensive dashboards and real-time reporting with actionable insights for continuous improvement.</p>
-                </div>
-                <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
-                  <Zap className="w-10 h-10 text-emerald-400 mb-4" />
-                  <h3 className="text-lg font-bold text-white mb-2">Rapid Response</h3>
-                  <p className="text-sm text-slate-400">24/7 social listening and crisis management to protect and enhance your online presence.</p>
+                {/* Additional Info */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-slate-800">
+                  <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
+                    <Shield className="w-10 h-10 text-purple-400 mb-4" />
+                    <h3 className="text-lg font-bold text-white mb-2">Brand Safety</h3>
+                    <p className="text-sm text-slate-400">Advanced monitoring and protection protocols to safeguard your brand reputation across all platforms.</p>
+                  </div>
+                  <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
+                    <BarChart3 className="w-10 h-10 text-purple-400 mb-4" />
+                    <h3 className="text-lg font-bold text-white mb-2">Data Analytics</h3>
+                    <p className="text-sm text-slate-400">Comprehensive dashboards and real-time reporting with actionable insights for continuous improvement.</p>
+                  </div>
+                  <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
+                    <Zap className="w-10 h-10 text-purple-400 mb-4" />
+                    <h3 className="text-lg font-bold text-white mb-2">Rapid Response</h3>
+                    <p className="text-sm text-slate-400">24/7 social listening and crisis management to protect and enhance your online presence.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -360,7 +360,7 @@ const MarketingServices = () => {
                 key={index}
                 className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300"
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
                 <div className="relative bg-slate-900 rounded-2xl overflow-hidden">
                   <div
                     className="h-48 bg-cover bg-center"
@@ -371,20 +371,20 @@ const MarketingServices = () => {
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      <span className="text-xs text-emerald-400 uppercase tracking-wide font-semibold">
+                      <span className="text-xs text-purple-400 uppercase tracking-wide font-semibold">
                         {study.industry}
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">
                       {study.company}
                     </h3>
-                    <p className="text-emerald-300 font-bold text-lg mb-4">
+                    <p className="text-purple-300 font-bold text-lg mb-4">
                       {study.result}
                     </p>
-                    <button className="text-sm text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 font-semibold">
+                    {/* <button className="text-sm text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2 font-semibold">
                       Read Case Study
                       <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
@@ -406,19 +406,19 @@ const MarketingServices = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-emerald-400 mb-2">250+</div>
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">250+</div>
               <div className="text-slate-400">Enterprise Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-emerald-400 mb-2">15M+</div>
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">15M+</div>
               <div className="text-slate-400">Content Pieces</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-emerald-400 mb-2">$50M+</div>
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">$50M+</div>
               <div className="text-slate-400">Revenue Generated</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-emerald-400 mb-2">98%</div>
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">98%</div>
               <div className="text-slate-400">Retention Rate</div>
             </div>
           </div>
@@ -429,7 +429,7 @@ const MarketingServices = () => {
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 to-cyan-600" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600" />
             <div className="relative p-12 sm:p-16 lg:p-20 text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
                 Ready to Dominate Social Media?
@@ -438,7 +438,7 @@ const MarketingServices = () => {
                 Partner with industry-leading experts to transform your social media presence into a powerful revenue driver
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-emerald-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
                   Schedule Strategy Session
                   <ArrowRight className="w-5 h-5" />
                 </button>

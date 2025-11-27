@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   const scrollToSection = (id) => {
@@ -13,9 +14,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
           <div className="col-span-2 lg:col-span-1">
-            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-3 sm:mb-4">
-              DottCiblez
-            </h3>
+            <img
+              src={logo}
+              alt="DottCiblez Logo"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-opacity duration-300 hover:opacity-90"
+            // onError={() => setLogoError(true)}
+            />
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-4 sm:mb-6">
               Transforming businesses through innovative software solutions and exceptional digital experiences.
             </p>
@@ -158,7 +162,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             <p className="text-gray-400 text-xs sm:text-sm">
-              &copy; 2024 DottCiblez. All rights reserved.
+              &copy; DottCiblez. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
               <button className="hover:text-blue-400 transition-colors duration-300">
@@ -167,9 +171,9 @@ const Footer = () => {
               <button className="hover:text-blue-400 transition-colors duration-300">
                 Terms of Service
               </button>
-              <button className="hover:text-blue-400 transition-colors duration-300">
+              {/* <button className="hover:text-blue-400 transition-colors duration-300">
                 Cookie Policy
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

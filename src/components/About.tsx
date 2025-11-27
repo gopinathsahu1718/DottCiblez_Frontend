@@ -89,7 +89,7 @@ const About: React.FC = () => {
   return (
     <section id="about" className="about-section" ref={sectionRef}>
       <div className="about-container">
-        <h3 className="about-section-label">Top Software Company in Dubai</h3>
+        <h3 className="about-section-label text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Top Software Company in Dubai</h3>
 
         <p className="about-description">
           When seeking the best software company in Dubai, the United Arab Emirates, the majority

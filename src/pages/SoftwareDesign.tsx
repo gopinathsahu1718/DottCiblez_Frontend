@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 const serviceData = {
   icon: Palette,
   title: "Software Design",
-  number: "02",
+  // number: "02",
   tagline: "Crafting Intuitive Interfaces That Users Love",
   description: "Elevate your digital products with exceptional design. Our talented design team creates user-centric interfaces that blend aesthetic excellence with seamless functionality, ensuring your software not only looks stunning but delivers an unforgettable user experience.",
   bgImage: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -120,15 +120,15 @@ const SoftwareDesign = () => {
             backgroundPosition: 'center'
           }}
         />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDIxNiwgMTgwLCAyNTQsIDAuMSkiLz48L2c+PC9zdmc+')]  opacity-20" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDE2OCwgODUsIDE5OSwgMC4xKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             {/* Service Number & Icon */}
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-6xl sm:text-7xl font-bold text-slate-800">
+              {/* <span className="text-6xl sm:text-7xl font-bold text-slate-800">
                 {serviceData.number}
-              </span>
+              </span> */}
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
                 <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-purple-400" />
               </div>
@@ -310,25 +310,25 @@ const SoftwareDesign = () => {
                     className="h-48 bg-cover bg-center"
                     style={{ backgroundImage: `url(${study.image})` }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t  to-transparent" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      <span className="text-xs text-slate-400 uppercase tracking-wide">
+                      <span className="text-xs text-purple-400 uppercase tracking-wide font-semibold">
                         {study.industry}
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">
                       {study.company}
                     </h3>
-                    <p className="text-purple-400 font-semibold mb-4">
+                    <p className="text-purple-300 font-bold text-lg mb-4">
                       {study.result}
                     </p>
-                    <button className="text-sm text-slate-400 hover:text-purple-400 transition-colors flex items-center gap-2">
+                    {/* <button className="text-sm text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2 font-semibold">
                       Read Case Study
                       <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

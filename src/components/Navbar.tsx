@@ -77,6 +77,7 @@ const Navbar = () => {
     setIsMobileServicesOpen(false);
     setIsMobileMenuOpen(false);
     navigate(path);
+    console.log('Navigate to:', path);
   };
 
   const services = [
@@ -85,7 +86,11 @@ const Navbar = () => {
     { name: 'Social Media Applications Development & Management', path: '/social-media-development-service' },
     { name: 'Social Media Marketing', path: '/social-media-marketing-service' },
     { name: 'Datacentre Colocation Services', path: '/datacenter-colocation-service' },
-    { name: 'Computer Systems & Communication Equipment', path: '/csce-service' }
+    { name: 'Computer Systems & Communication Equipment', path: '/csce-service' },
+    { name: 'Cloud Datacentre Services', path: '/cd-service' },
+    { name: 'Cyber Audit Services', path: '/cyber-service' },
+    { name: 'Education Software', path: '/education-software-service' },
+    { name: 'IT Infrastructure Services', path: '/it-infrastructure-service' },
   ];
 
   return (
@@ -107,6 +112,25 @@ const Navbar = () => {
        
         .overlay-enter {
           animation: fadeIn 0.3s ease;
+        }
+
+        /* Custom scrollbar for mobile services */
+        .mobile-services-scroll::-webkit-scrollbar {
+          width: 4px;
+        }
+        
+        .mobile-services-scroll::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        .mobile-services-scroll::-webkit-scrollbar-thumb {
+          background: #cbd5e1;
+          border-radius: 4px;
+        }
+        
+        .mobile-services-scroll::-webkit-scrollbar-thumb:hover {
+          background: #94a3b8;
         }
       `}</style>
       <nav
@@ -266,19 +290,21 @@ const Navbar = () => {
               />
             </button>
             <div
-              className={`overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              className={`overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-[50vh] opacity-100' : 'max-h-0 opacity-0'
                 }`}
             >
-              <div className="ml-4 mt-1 space-y-1 border-l-2 border-gray-200 pl-4">
-                {services.map((service, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleServiceNavigation(service.path)}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-md transition-all duration-200"
-                  >
-                    {service.name}
-                  </button>
-                ))}
+              <div className="ml-4 mt-1 border-l-2 border-gray-200 pl-4">
+                <div className="max-h-[45vh] overflow-y-auto mobile-services-scroll space-y-1 pr-2">
+                  {services.map((service, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleServiceNavigation(service.path)}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-md transition-all duration-200"
+                    >
+                      {service.name}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -1,139 +1,181 @@
-import { Server, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Network, Cpu, HardDrive, Radio, Star, Award } from 'lucide-react';
+import { Cloud, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Server, Database, Lock, Globe, Star, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-// Computer Systems & Communication Equipment service data
+// Cloud Service & Datacenters Providers service data
 const serviceData = {
-  icon: Server,
-  title: "Computer Systems & Communication Equipment",
-  // number: "04",
-  tagline: "Enterprise Infrastructure Solutions for Mission-Critical Operations",
-  description: "Deploy robust, scalable IT infrastructure with our comprehensive computer systems and communication equipment solutions. We provide end-to-end services from design and procurement to installation, integration, and ongoing support for enterprises demanding maximum uptime and performance.",
+  icon: Cloud,
+  title: "Cloud Service & Datacenters Providers",
+  //   number: "07",
+  tagline: "Enterprise-Grade Cloud Infrastructure & Data Center Solutions",
+  description: "Power your business with cutting-edge cloud services and state-of-the-art data center infrastructure. We deliver scalable, secure, and highly available cloud solutions with 99.99% uptime, enterprise-grade security, and global reach to support your mission-critical applications and workloads.",
   bgImage: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
   highlights: [
-    { icon: Users, title: "500+", subtitle: "Enterprise Deployments" },
-    { icon: Award, title: "99.99%", subtitle: "System Uptime SLA" },
-    { icon: TrendingUp, title: "60%", subtitle: "Cost Optimization" },
-    { icon: Clock, title: "24/7/365", subtitle: "Technical Support" }
+    { icon: Globe, title: "50+", subtitle: "Global Data Centers" },
+    { icon: Award, title: "99.99%", subtitle: "Uptime Guarantee" },
+    { icon: TrendingUp, title: "10PB+", subtitle: "Data Managed" },
+    { icon: Clock, title: "24/7", subtitle: "Expert Support" }
   ],
 
   features: [
     {
+      icon: Cloud,
+      title: "Cloud Computing Services",
+      description: "Comprehensive IaaS, PaaS, and SaaS solutions with auto-scaling, load balancing, and multi-region deployment for maximum performance and reliability."
+    },
+    {
       icon: Server,
-      title: "Enterprise Server Solutions",
-      description: "High-performance server infrastructure including blade servers, rack-mounted systems, and hyper-converged solutions designed for demanding workloads and maximum reliability."
+      title: "Dedicated Data Centers",
+      description: "Tier III & IV certified data centers with redundant power, cooling systems, advanced fire suppression, and physical security with 24/7 monitoring."
     },
     {
-      icon: Network,
-      title: "Network Infrastructure",
-      description: "Advanced networking equipment including switches, routers, firewalls, and load balancers to build secure, high-speed networks that scale with your business."
-    },
-    {
-      icon: HardDrive,
-      title: "Storage Systems",
-      description: "Enterprise-grade storage solutions from SAN and NAS to cloud-connected storage arrays with built-in redundancy, backup, and disaster recovery capabilities."
-    },
-    {
-      icon: Radio,
-      title: "Unified Communications",
-      description: "Complete communication systems including VoIP, video conferencing, collaboration platforms, and contact center solutions for seamless business communications."
-    },
-    {
-      icon: Cpu,
-      title: "Data Center Solutions",
-      description: "Full data center design, build, and management services including power, cooling, cabling, and environmental monitoring for optimal performance."
+      icon: Database,
+      title: "Storage & Backup Solutions",
+      description: "Scalable object storage, block storage, file storage, and automated backup solutions with disaster recovery and business continuity planning."
     },
     {
       icon: Shield,
-      title: "Security Infrastructure",
-      description: "Comprehensive security systems including firewalls, intrusion detection, encryption appliances, and access control to protect your critical assets."
+      title: "Security & Compliance",
+      description: "Enterprise-grade security with DDoS protection, WAF, encryption at rest and in transit, SOC 2, ISO 27001, HIPAA, and GDPR compliance."
+    },
+    {
+      icon: Globe,
+      title: "Content Delivery Network",
+      description: "Global CDN with edge locations worldwide, intelligent caching, SSL/TLS support, and real-time analytics for lightning-fast content delivery."
+    },
+    {
+      icon: Zap,
+      title: "High-Performance Computing",
+      description: "GPU-accelerated instances, bare metal servers, and specialized compute for AI/ML workloads, big data analytics, and intensive applications."
     }
   ],
 
   process: [
     {
       step: "01",
-      title: "Assessment & Design",
-      description: "Comprehensive analysis of your current infrastructure, business requirements, growth projections, and compliance needs. Our engineers create detailed architecture designs with capacity planning and ROI analysis."
+      title: "Infrastructure Assessment",
+      description: "Conduct comprehensive analysis of your current infrastructure, application requirements, workload patterns, compliance needs, and define migration strategy with detailed cost projections and ROI analysis."
     },
     {
       step: "02",
-      title: "Procurement & Integration",
-      description: "Leverage our vendor relationships to source best-in-class equipment at competitive pricing. We handle all logistics, ensuring compatibility and optimal configuration for your environment."
+      title: "Architecture Design",
+      description: "Design scalable cloud architecture with high availability, disaster recovery, security frameworks, network topology, and multi-region deployment strategy tailored to your business needs."
     },
     {
       step: "03",
-      title: "Installation & Deployment",
-      description: "Professional installation by certified technicians with minimal disruption to operations. Comprehensive testing, documentation, and knowledge transfer to your IT team."
+      title: "Migration & Deployment",
+      description: "Execute phased migration with minimal downtime, configure infrastructure-as-code, implement monitoring and logging, conduct performance testing, and ensure seamless cutover."
     },
     {
       step: "04",
-      title: "Monitoring & Support",
-      description: "Proactive 24/7 monitoring, preventive maintenance, rapid incident response, and continuous optimization to ensure peak performance and maximum uptime."
+      title: "Optimization & Support",
+      description: "Continuous monitoring, performance optimization, cost management, security updates, scaling adjustments, and 24/7 technical support with dedicated account management."
     }
   ],
 
   technologies: [
-    "Cisco Systems", "Dell EMC", "HPE ProLiant", "Juniper Networks", "NetApp",
-    "VMware", "Microsoft Azure Stack", "Palo Alto Networks", "Arista", "Pure Storage"
+    "AWS", "Azure", "Google Cloud", "VMware", "Kubernetes", "Docker",
+    "Terraform", "Ansible", "OpenStack", "Cisco", "Juniper", "NetApp"
   ],
 
   caseStudies: [
     {
-      company: "National Bank Corp",
+      company: "FinTech Global Corp",
       industry: "Financial Services",
-      result: "Zero downtime in 36 months",
-      image: "https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=600"
+      result: "50% cost reduction achieved",
+      image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      company: "MediCare Health Systems",
+      company: "Healthcare Network USA",
       industry: "Healthcare",
-      result: "HIPAA compliant infrastructure",
-      image: "https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=600"
+      result: "99.999% uptime maintained",
+      image: "https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      company: "Global Manufacturing Inc",
-      industry: "Manufacturing",
-      result: "40% reduction in IT costs",
-      image: "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600"
+      company: "E-Commerce Leaders",
+      industry: "Retail",
+      result: "300% traffic scale handled",
+      image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+  ],
+
+  platforms: [
+    {
+      name: "Public Cloud Services",
+      description: "Multi-cloud solutions on AWS, Azure, GCP with managed services",
+      tech: "AWS, Azure, Google Cloud"
+    },
+    {
+      name: "Private Cloud Infrastructure",
+      description: "Dedicated cloud environments with complete control and isolation",
+      tech: "VMware, OpenStack, KVM"
+    },
+    {
+      name: "Hybrid Cloud Solutions",
+      description: "Seamless integration between on-premise and cloud resources",
+      tech: "Azure Arc, AWS Outposts"
+    },
+    {
+      name: "Colocation Services",
+      description: "Secure rack space in Tier III/IV data centers with redundancy",
+      tech: "Dedicated Racks, Cages"
+    },
+    {
+      name: "Disaster Recovery",
+      description: "Hot/warm/cold DR sites with automated failover mechanisms",
+      tech: "Veeam, Zerto, Site Recovery"
+    },
+    {
+      name: "Managed Services",
+      description: "24/7 infrastructure management, monitoring, and support",
+      tech: "Monitoring, NOC, SOC"
     }
   ],
 
   solutions: [
     {
-      name: "Server Infrastructure",
-      description: "Rack, blade, and tower servers with redundant power and storage",
-      specs: "Up to 1000+ cores per deployment"
+      title: "Enterprise Cloud Migration",
+      description: "Comprehensive cloud migration services with zero-downtime strategies and application modernization.",
+      icon: Cloud
     },
     {
-      name: "Network Equipment",
-      description: "Switches, routers, and wireless access points for enterprise networks",
-      specs: "10/40/100 Gbps capabilities"
+      title: "Data Center Colocation",
+      description: "Secure, compliant colocation with carrier-neutral connectivity and flexible power options.",
+      icon: Server
     },
     {
-      name: "Storage Arrays",
-      description: "SAN, NAS, and object storage with tiering and deduplication",
-      specs: "Petabyte-scale capacity"
+      title: "Backup & DR",
+      description: "Automated backup solutions with geo-redundant storage and rapid recovery capabilities.",
+      icon: Database
     },
     {
-      name: "Communication Systems",
-      description: "VoIP PBX, video conferencing, and unified messaging platforms",
-      specs: "Supports 10,000+ users"
+      title: "Cloud Security",
+      description: "Multi-layered security with advanced threat protection, encryption, and compliance management.",
+      icon: Lock
     },
     {
-      name: "Security Appliances",
-      description: "Next-gen firewalls, IPS/IDS, and SSL inspection",
-      specs: "Multi-gigabit throughput"
+      title: "Global CDN",
+      description: "Edge computing and content delivery with sub-50ms latency across major markets.",
+      icon: Globe
     },
     {
-      name: "Backup Solutions",
-      description: "Automated backup systems with encryption and replication",
-      specs: "RTO < 1 hour, RPO < 15 min"
+      title: "DevOps Solutions",
+      description: "CI/CD pipelines, infrastructure-as-code, and containerized application deployment.",
+      icon: Zap
     }
+  ],
+
+  certifications: [
+    "SOC 2 Type II",
+    "ISO 27001",
+    "HIPAA",
+    "PCI DSS",
+    "GDPR",
+    "FedRAMP"
   ]
 };
 
-const ComputerSystemsCommunicationEquipment = () => {
+const CloudDatacenterService = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const Icon = serviceData.icon;
   useEffect(() => {
@@ -182,11 +224,11 @@ const ComputerSystemsCommunicationEquipment = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300">
-                Request Consultation
+                Get Started
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-800/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300">
-                Download Solutions Guide
+                Tour Data Centers
               </button>
             </div>
           </div>
@@ -218,7 +260,7 @@ const ComputerSystemsCommunicationEquipment = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-3 mb-12 sm:mb-16 border-b border-slate-800 pb-6">
-            {['overview', 'process', 'solutions', 'partners'].map((tab) => (
+            {['overview', 'process', 'platforms', 'solutions'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -236,7 +278,7 @@ const ComputerSystemsCommunicationEquipment = () => {
           {activeTab === 'overview' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Comprehensive IT Infrastructure Services
+                Complete Cloud & Infrastructure Solutions
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {serviceData.features.map((feature, index) => {
@@ -297,14 +339,14 @@ const ComputerSystemsCommunicationEquipment = () => {
             </div>
           )}
 
-          {/* Solutions Tab */}
-          {activeTab === 'solutions' && (
+          {/* Platforms Tab */}
+          {activeTab === 'platforms' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Infrastructure Solutions Portfolio
+                Cloud & Infrastructure Platforms
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {serviceData.solutions.map((solution, index) => (
+                {serviceData.platforms.map((platform, index) => (
                   <div
                     key={index}
                     className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300"
@@ -312,14 +354,14 @@ const ComputerSystemsCommunicationEquipment = () => {
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
                     <div className="relative bg-slate-900 rounded-2xl p-6">
                       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
-                        {solution.name}
+                        {platform.name}
                       </h3>
                       <p className="text-sm text-slate-400 leading-relaxed mb-3">
-                        {solution.description}
+                        {platform.description}
                       </p>
                       <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-lg">
-                        <Zap className="w-4 h-4 text-purple-400" />
-                        <span className="text-xs text-purple-300 font-semibold">{solution.specs}</span>
+                        <Server className="w-4 h-4 text-purple-400" />
+                        <span className="text-xs text-purple-300 font-semibold">{platform.tech}</span>
                       </div>
                     </div>
                   </div>
@@ -328,13 +370,40 @@ const ComputerSystemsCommunicationEquipment = () => {
             </div>
           )}
 
-          {/* Partners Tab */}
-          {activeTab === 'partners' && (
+          {/* Solutions Tab */}
+          {activeTab === 'solutions' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Trusted Technology Partners
+                Comprehensive Cloud Solutions
               </h2>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-8 sm:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {serviceData.solutions.map((solution, index) => {
+                  const SolutionIcon = solution.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+                      <div className="relative bg-slate-900 rounded-2xl p-6">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30 mb-4">
+                          <SolutionIcon className="w-6 h-6 text-purple-400" />
+                        </div>
+                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                          {solution.title}
+                        </h3>
+                        <p className="text-sm text-slate-400 leading-relaxed">
+                          {solution.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Tech Stack & Certifications */}
+              <div className="mt-12 bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-8 sm:p-12">
+                <h3 className="text-2xl font-bold text-white mb-6">Technologies & Platforms</h3>
                 <div className="flex flex-wrap gap-4 mb-12">
                   {serviceData.technologies.map((tech, index) => (
                     <span
@@ -346,22 +415,35 @@ const ComputerSystemsCommunicationEquipment = () => {
                   ))}
                 </div>
 
-                {/* Certifications */}
+                <div className="pt-8 border-t border-slate-800">
+                  <h3 className="text-xl font-bold text-white mb-6">Security & Compliance Certifications</h3>
+                  <div className="flex flex-wrap gap-4 mb-12">
+                    {serviceData.certifications.map((cert, index) => (
+                      <span
+                        key={index}
+                        className="px-6 py-3 bg-purple-500/10 text-purple-300 rounded-xl border border-purple-500/30 font-semibold"
+                      >
+                        {cert}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-slate-800">
                   <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
-                    <Award className="w-10 h-10 text-purple-400 mb-4" />
-                    <h3 className="text-lg font-bold text-white mb-2">Certified Partners</h3>
-                    <p className="text-sm text-slate-400">Gold and platinum tier partnerships with leading manufacturers for priority support and best pricing.</p>
-                  </div>
-                  <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
                     <Shield className="w-10 h-10 text-purple-400 mb-4" />
-                    <h3 className="text-lg font-bold text-white mb-2">Compliance Ready</h3>
-                    <p className="text-sm text-slate-400">Solutions designed to meet SOC 2, ISO 27001, HIPAA, PCI-DSS, and other regulatory requirements.</p>
+                    <h3 className="text-lg font-bold text-white mb-2">Enterprise Security</h3>
+                    <p className="text-sm text-slate-400">Multi-layered security with DDoS protection, WAF, encryption, and 24/7 SOC monitoring.</p>
                   </div>
                   <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
                     <TrendingUp className="w-10 h-10 text-purple-400 mb-4" />
-                    <h3 className="text-lg font-bold text-white mb-2">Scalable Architecture</h3>
-                    <p className="text-sm text-slate-400">Infrastructure designed to scale seamlessly from departmental to enterprise-wide deployments.</p>
+                    <h3 className="text-lg font-bold text-white mb-2">Auto-Scaling</h3>
+                    <p className="text-sm text-slate-400">Intelligent auto-scaling to handle traffic spikes with cost optimization algorithms.</p>
+                  </div>
+                  <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
+                    <Globe className="w-10 h-10 text-purple-400 mb-4" />
+                    <h3 className="text-lg font-bold text-white mb-2">Global Presence</h3>
+                    <p className="text-sm text-slate-400">50+ data centers worldwide with low-latency connectivity and geo-redundancy.</p>
                   </div>
                 </div>
               </div>
@@ -378,7 +460,7 @@ const ComputerSystemsCommunicationEquipment = () => {
               Enterprise Success Stories
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Delivering mission-critical infrastructure solutions for organizations that demand excellence
+              Powering mission-critical applications for Fortune 500 companies worldwide
             </p>
           </div>
 
@@ -394,7 +476,7 @@ const ComputerSystemsCommunicationEquipment = () => {
                     className="h-48 bg-cover bg-center"
                     style={{ backgroundImage: `url(${study.image})` }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t  to-transparent" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -421,33 +503,33 @@ const ComputerSystemsCommunicationEquipment = () => {
         </div>
       </section>
 
-      {/* Service Level Guarantees */}
+      {/* Stats Section */}
       <section className="py-16 sm:py-20 lg:py-24 border-y border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Service Level Commitments
+              Infrastructure at Scale
             </h2>
             <p className="text-lg text-slate-400">
-              Industry-leading guarantees backed by our proven track record
+              Enterprise-grade reliability and performance
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">1000+</div>
+              <div className="text-slate-400">Enterprise Clients</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">50+</div>
+              <div className="text-slate-400">Data Centers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">10PB+</div>
+              <div className="text-slate-400">Data Managed</div>
+            </div>
+            <div className="text-center">
               <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">99.99%</div>
               <div className="text-slate-400">Uptime SLA</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">&lt;15min</div>
-              <div className="text-slate-400">Response Time</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">24/7/365</div>
-              <div className="text-slate-400">Support Coverage</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">10+ Years</div>
-              <div className="text-slate-400">Equipment Lifecycle</div>
             </div>
           </div>
         </div>
@@ -460,18 +542,18 @@ const ComputerSystemsCommunicationEquipment = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600" />
             <div className="relative p-12 sm:p-16 lg:p-20 text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Modernize Your IT Infrastructure?
+                Ready to Scale Your Infrastructure?
               </h2>
               <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Partner with industry experts to build a resilient, scalable infrastructure that powers your business growth
+                Let's build a secure, scalable cloud infrastructure that powers your business growth with enterprise-grade reliability
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                  Schedule Infrastructure Assessment
+                  Schedule Consultation
                   <ArrowRight className="w-5 h-5" />
                 </button>
                 <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  Contact Sales Team
+                  Get Custom Quote
                 </button>
               </div>
             </div>
@@ -482,4 +564,4 @@ const ComputerSystemsCommunicationEquipment = () => {
   );
 };
 
-export default ComputerSystemsCommunicationEquipment;
+export default CloudDatacenterService;

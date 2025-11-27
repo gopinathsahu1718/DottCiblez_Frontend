@@ -23,7 +23,7 @@ function Clients() {
           transition={{ duration: 0.6 }}
           className="section-header"
         >
-          <h2 className="section-title">Trusted By Industry Leaders</h2>
+          <h2 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Trusted By Industry Leaders</h2>
           <p className="section-subtitle">
             Partnering with businesses worldwide to deliver exceptional results
           </p>

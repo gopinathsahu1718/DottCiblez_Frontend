@@ -79,7 +79,7 @@ section {
 }
 
 /* Ensure container elements don't overflow */
-.container,
+/* .container, */
 .statistics-container,
 .team-container {
   max-width: 100% !important;
@@ -134,13 +134,13 @@ section {
   }
 
   /* Fix for Clients section */
-  .clients {
+  /* .clients {
     overflow-x: hidden;
   }
 
   .clients-grid {
     max-width: 100%;
-  }
+  } */
 
   /* Fix for Team section */
   #team {
@@ -197,7 +197,7 @@ section {
 
   /* Ensure grid gaps don't cause overflow */
   .statistics-grid,
-  .clients-grid,
+  /* .clients-grid, */
   .features-grid {
     gap: 10px !important;
   }

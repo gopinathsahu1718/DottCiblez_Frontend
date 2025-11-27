@@ -1087,20 +1087,3 @@
     font-size: 2.8rem;
   }
 }
-
-
-/* Prevent horizontal overflow in About section */
-@media (max-width: 768px) {
-  .about-section {
-    overflow-x: hidden !important;
-  }
-
-  .about-container {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
-  }
-
-  .about-years-badge {
-    overflow: hidden !important;
-  }
-}

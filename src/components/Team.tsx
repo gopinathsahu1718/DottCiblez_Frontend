@@ -133,7 +133,7 @@ function Team() {
                         alt={member.name}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-600/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3 sm:pb-4 md:pb-5 lg:pb-6">
+                      {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-600/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3 sm:pb-4 md:pb-5 lg:pb-6">
                         <div className="flex gap-2 sm:gap-2.5 md:gap-3">
                           <a
                             href="#"
@@ -154,7 +154,7 @@ function Team() {
                             <Github className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5" />
                           </a>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                     <div className="p-3 sm:p-4 md:p-5 lg:p-6 text-center">
                       <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-gray-900 mb-1 sm:mb-1.5 md:mb-2">
@@ -211,9 +211,8 @@ function Team() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'w-6 sm:w-7 md:w-8 bg-blue-600' : 'w-1.5 sm:w-2 bg-gray-300 hover:bg-gray-400'
-              }`}
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-6 sm:w-7 md:w-8 bg-blue-600' : 'w-1.5 sm:w-2 bg-gray-300 hover:bg-gray-400'
+                }`}
             />
           ))}
         </div>

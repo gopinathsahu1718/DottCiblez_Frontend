@@ -6,7 +6,8 @@ const slides = [
     title: "Welcome to Dottciblez",
     subtitle: "Innovative Software Solutions for Modern Businesses",
     description: "We deliver cutting-edge technology solutions that drive growth and efficiency",
-    gradient: "from-blue-600 to-purple-600",
+    // gradient: "from-blue-600 to-purple-600",
+    gradient: "from-indigo-600 to-blue-600",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
   },
   {
@@ -20,7 +21,8 @@ const slides = [
     title: "Scale Your Business Today",
     subtitle: "Enterprise-Grade Solutions That Work",
     description: "Trusted by industry leaders for delivering excellence in every project",
-    gradient: "from-purple-600 to-pink-600",
+    // gradient: "from-purple-600 to-pink-600",
+    gradient: "from-indigo-600 to-blue-600",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop"
   }
 ];

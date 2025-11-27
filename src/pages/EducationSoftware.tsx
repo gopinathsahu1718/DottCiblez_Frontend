@@ -1,139 +1,172 @@
-import { Server, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Network, Cpu, HardDrive, Radio, Star, Award } from 'lucide-react';
+import { GraduationCap, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, BookOpen, Video, Brain, Award, Star, Monitor } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-// Computer Systems & Communication Equipment service data
+// Education & Training Computer Software service data
 const serviceData = {
-  icon: Server,
-  title: "Computer Systems & Communication Equipment",
-  // number: "04",
-  tagline: "Enterprise Infrastructure Solutions for Mission-Critical Operations",
-  description: "Deploy robust, scalable IT infrastructure with our comprehensive computer systems and communication equipment solutions. We provide end-to-end services from design and procurement to installation, integration, and ongoing support for enterprises demanding maximum uptime and performance.",
-  bgImage: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  icon: GraduationCap,
+  title: "Education & Training Computer Software",
+  //   number: "06",
+  tagline: "Transform Learning with Intelligent EdTech Solutions",
+  description: "Revolutionize education and corporate training with cutting-edge software solutions. We build comprehensive learning management systems, interactive e-learning platforms, and AI-powered training tools that enhance knowledge retention, engagement, and measurable learning outcomes.",
+  bgImage: "https://images.pexels.com/photos/5905700/pexels-photo-5905700.jpeg?auto=compress&cs=tinysrgb&w=1200",
 
   highlights: [
-    { icon: Users, title: "500+", subtitle: "Enterprise Deployments" },
-    { icon: Award, title: "99.99%", subtitle: "System Uptime SLA" },
-    { icon: TrendingUp, title: "60%", subtitle: "Cost Optimization" },
-    { icon: Clock, title: "24/7/365", subtitle: "Technical Support" }
+    { icon: Users, title: "2M+", subtitle: "Active Learners" },
+    { icon: Award, title: "95%", subtitle: "Completion Rate" },
+    { icon: TrendingUp, title: "400%", subtitle: "Engagement Increase" },
+    { icon: Clock, title: "50%", subtitle: "Faster Learning" }
   ],
 
   features: [
     {
-      icon: Server,
-      title: "Enterprise Server Solutions",
-      description: "High-performance server infrastructure including blade servers, rack-mounted systems, and hyper-converged solutions designed for demanding workloads and maximum reliability."
+      icon: BookOpen,
+      title: "Learning Management Systems",
+      description: "Comprehensive LMS platforms with course creation, student management, progress tracking, assessments, certifications, and advanced analytics for institutions and enterprises."
     },
     {
-      icon: Network,
-      title: "Network Infrastructure",
-      description: "Advanced networking equipment including switches, routers, firewalls, and load balancers to build secure, high-speed networks that scale with your business."
+      icon: Video,
+      title: "Interactive E-Learning",
+      description: "Engaging multimedia courses with video lectures, interactive simulations, gamification elements, quizzes, and adaptive learning paths tailored to individual student needs."
     },
     {
-      icon: HardDrive,
-      title: "Storage Systems",
-      description: "Enterprise-grade storage solutions from SAN and NAS to cloud-connected storage arrays with built-in redundancy, backup, and disaster recovery capabilities."
+      icon: Brain,
+      title: "AI-Powered Personalization",
+      description: "Machine learning algorithms that adapt content difficulty, recommend courses, predict learning outcomes, and provide personalized feedback to maximize retention."
     },
     {
-      icon: Radio,
-      title: "Unified Communications",
-      description: "Complete communication systems including VoIP, video conferencing, collaboration platforms, and contact center solutions for seamless business communications."
+      icon: Monitor,
+      title: "Virtual Classrooms",
+      description: "Real-time video conferencing, collaborative whiteboards, breakout rooms, screen sharing, recording capabilities, and interactive polling for remote learning environments."
     },
     {
-      icon: Cpu,
-      title: "Data Center Solutions",
-      description: "Full data center design, build, and management services including power, cooling, cabling, and environmental monitoring for optimal performance."
+      icon: Award,
+      title: "Assessment & Certification",
+      description: "Comprehensive testing systems with automated grading, anti-cheating measures, skill assessments, badge systems, and verifiable digital certifications."
     },
     {
-      icon: Shield,
-      title: "Security Infrastructure",
-      description: "Comprehensive security systems including firewalls, intrusion detection, encryption appliances, and access control to protect your critical assets."
+      icon: TrendingUp,
+      title: "Analytics & Reporting",
+      description: "Deep learning analytics, student performance dashboards, engagement metrics, ROI tracking, and actionable insights for educators and administrators."
     }
   ],
 
   process: [
     {
       step: "01",
-      title: "Assessment & Design",
-      description: "Comprehensive analysis of your current infrastructure, business requirements, growth projections, and compliance needs. Our engineers create detailed architecture designs with capacity planning and ROI analysis."
+      title: "Requirements & Curriculum Analysis",
+      description: "Conduct thorough needs assessment, analyze existing curriculum, identify learning objectives, define user personas (students, instructors, admins), and establish measurable KPIs for educational outcomes."
     },
     {
       step: "02",
-      title: "Procurement & Integration",
-      description: "Leverage our vendor relationships to source best-in-class equipment at competitive pricing. We handle all logistics, ensuring compatibility and optimal configuration for your environment."
+      title: "Pedagogical Design & Architecture",
+      description: "Design learning experience frameworks, create intuitive navigation structures, develop content organization systems, and architect scalable infrastructure supporting multimedia content and concurrent users."
     },
     {
       step: "03",
-      title: "Installation & Deployment",
-      description: "Professional installation by certified technicians with minimal disruption to operations. Comprehensive testing, documentation, and knowledge transfer to your IT team."
+      title: "Development & Content Integration",
+      description: "Build responsive platforms with mobile-first approach, integrate SCORM/xAPI compliance, implement gamification mechanics, develop assessment engines, and create content authoring tools for educators."
     },
     {
       step: "04",
-      title: "Monitoring & Support",
-      description: "Proactive 24/7 monitoring, preventive maintenance, rapid incident response, and continuous optimization to ensure peak performance and maximum uptime."
+      title: "Testing, Launch & Support",
+      description: "Conduct usability testing with real learners, perform accessibility audits (WCAG compliance), execute pilot programs, provide comprehensive training, and offer ongoing technical support and feature updates."
     }
   ],
 
   technologies: [
-    "Cisco Systems", "Dell EMC", "HPE ProLiant", "Juniper Networks", "NetApp",
-    "VMware", "Microsoft Azure Stack", "Palo Alto Networks", "Arista", "Pure Storage"
+    "React", "Node.js", "Python", "TensorFlow", "Moodle", "Canvas LMS",
+    "MongoDB", "PostgreSQL", "AWS", "WebRTC", "SCORM", "xAPI"
   ],
 
   caseStudies: [
     {
-      company: "National Bank Corp",
-      industry: "Financial Services",
-      result: "Zero downtime in 36 months",
-      image: "https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=600"
+      company: "Global University Network",
+      industry: "Higher Education",
+      result: "500K students onboarded",
+      image: "https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      company: "MediCare Health Systems",
-      industry: "Healthcare",
-      result: "HIPAA compliant infrastructure",
-      image: "https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=600"
+      company: "TechCorp Training Academy",
+      industry: "Corporate Training",
+      result: "85% skill improvement",
+      image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      company: "Global Manufacturing Inc",
-      industry: "Manufacturing",
-      result: "40% reduction in IT costs",
-      image: "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600"
+      company: "K-12 Digital Schools",
+      industry: "Primary Education",
+      result: "40% better test scores",
+      image: "https://images.pexels.com/photos/8500467/pexels-photo-8500467.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+  ],
+
+  platforms: [
+    {
+      name: "Learning Management Systems",
+      description: "Full-featured LMS with course management and student portals",
+      tech: "React, Node.js, MongoDB"
+    },
+    {
+      name: "Virtual Classroom Software",
+      description: "Real-time video learning with interactive collaboration tools",
+      tech: "WebRTC, Socket.io, AWS"
+    },
+    {
+      name: "Mobile Learning Apps",
+      description: "iOS and Android apps for learning on-the-go",
+      tech: "React Native, Flutter"
+    },
+    {
+      name: "Content Authoring Tools",
+      description: "Drag-and-drop course builders for non-technical educators",
+      tech: "React, SCORM, xAPI"
+    },
+    {
+      name: "Assessment Platforms",
+      description: "Advanced testing engines with AI-powered proctoring",
+      tech: "Python, TensorFlow, OpenCV"
+    },
+    {
+      name: "Student Information Systems",
+      description: "Complete academic records and enrollment management",
+      tech: "Java, Spring Boot, MySQL"
     }
   ],
 
   solutions: [
     {
-      name: "Server Infrastructure",
-      description: "Rack, blade, and tower servers with redundant power and storage",
-      specs: "Up to 1000+ cores per deployment"
+      title: "K-12 Education",
+      description: "Interactive learning platforms for primary and secondary schools with parent portals and curriculum alignment.",
+      icon: BookOpen
     },
     {
-      name: "Network Equipment",
-      description: "Switches, routers, and wireless access points for enterprise networks",
-      specs: "10/40/100 Gbps capabilities"
+      title: "Higher Education",
+      description: "Comprehensive university LMS with research collaboration tools and degree management systems.",
+      icon: GraduationCap
     },
     {
-      name: "Storage Arrays",
-      description: "SAN, NAS, and object storage with tiering and deduplication",
-      specs: "Petabyte-scale capacity"
+      title: "Corporate Training",
+      description: "Employee onboarding, skills development, compliance training, and leadership development programs.",
+      icon: Users
     },
     {
-      name: "Communication Systems",
-      description: "VoIP PBX, video conferencing, and unified messaging platforms",
-      specs: "Supports 10,000+ users"
+      title: "Professional Certification",
+      description: "Industry certification programs with exam prep, practice tests, and credential management.",
+      icon: Award
     },
     {
-      name: "Security Appliances",
-      description: "Next-gen firewalls, IPS/IDS, and SSL inspection",
-      specs: "Multi-gigabit throughput"
+      title: "Language Learning",
+      description: "AI-powered language acquisition platforms with speech recognition and adaptive practice.",
+      icon: Brain
     },
     {
-      name: "Backup Solutions",
-      description: "Automated backup systems with encryption and replication",
-      specs: "RTO < 1 hour, RPO < 15 min"
+      title: "Skills Marketplaces",
+      description: "Online course platforms connecting instructors with learners for diverse skill development.",
+      icon: TrendingUp
     }
   ]
 };
 
-const ComputerSystemsCommunicationEquipment = () => {
+const EducationSoftware = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const Icon = serviceData.icon;
   useEffect(() => {
@@ -182,11 +215,11 @@ const ComputerSystemsCommunicationEquipment = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300">
-                Request Consultation
+                Start Your Project
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-800/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300">
-                Download Solutions Guide
+                View Demo
               </button>
             </div>
           </div>
@@ -218,7 +251,7 @@ const ComputerSystemsCommunicationEquipment = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-3 mb-12 sm:mb-16 border-b border-slate-800 pb-6">
-            {['overview', 'process', 'solutions', 'partners'].map((tab) => (
+            {['overview', 'process', 'platforms', 'solutions'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -236,7 +269,7 @@ const ComputerSystemsCommunicationEquipment = () => {
           {activeTab === 'overview' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Comprehensive IT Infrastructure Services
+                Complete EdTech Solutions
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {serviceData.features.map((feature, index) => {
@@ -269,7 +302,7 @@ const ComputerSystemsCommunicationEquipment = () => {
           {activeTab === 'process' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Our Implementation Process
+                Our Development Process
               </h2>
               <div className="space-y-6">
                 {serviceData.process.map((step, index) => (
@@ -297,14 +330,14 @@ const ComputerSystemsCommunicationEquipment = () => {
             </div>
           )}
 
-          {/* Solutions Tab */}
-          {activeTab === 'solutions' && (
+          {/* Platforms Tab */}
+          {activeTab === 'platforms' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Infrastructure Solutions Portfolio
+                Educational Software Platforms
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {serviceData.solutions.map((solution, index) => (
+                {serviceData.platforms.map((platform, index) => (
                   <div
                     key={index}
                     className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300"
@@ -312,14 +345,14 @@ const ComputerSystemsCommunicationEquipment = () => {
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
                     <div className="relative bg-slate-900 rounded-2xl p-6">
                       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
-                        {solution.name}
+                        {platform.name}
                       </h3>
                       <p className="text-sm text-slate-400 leading-relaxed mb-3">
-                        {solution.description}
+                        {platform.description}
                       </p>
                       <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-lg">
-                        <Zap className="w-4 h-4 text-purple-400" />
-                        <span className="text-xs text-purple-300 font-semibold">{solution.specs}</span>
+                        <Monitor className="w-4 h-4 text-purple-400" />
+                        <span className="text-xs text-purple-300 font-semibold">{platform.tech}</span>
                       </div>
                     </div>
                   </div>
@@ -328,13 +361,40 @@ const ComputerSystemsCommunicationEquipment = () => {
             </div>
           )}
 
-          {/* Partners Tab */}
-          {activeTab === 'partners' && (
+          {/* Solutions Tab */}
+          {activeTab === 'solutions' && (
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12">
-                Trusted Technology Partners
+                Industry-Specific Solutions
               </h2>
-              <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-8 sm:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {serviceData.solutions.map((solution, index) => {
+                  const SolutionIcon = solution.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+                      <div className="relative bg-slate-900 rounded-2xl p-6">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30 mb-4">
+                          <SolutionIcon className="w-6 h-6 text-purple-400" />
+                        </div>
+                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                          {solution.title}
+                        </h3>
+                        <p className="text-sm text-slate-400 leading-relaxed">
+                          {solution.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Tech Stack */}
+              <div className="mt-12 bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-8 sm:p-12">
+                <h3 className="text-2xl font-bold text-white mb-6">Technologies We Use</h3>
                 <div className="flex flex-wrap gap-4 mb-12">
                   {serviceData.technologies.map((tech, index) => (
                     <span
@@ -346,22 +406,21 @@ const ComputerSystemsCommunicationEquipment = () => {
                   ))}
                 </div>
 
-                {/* Certifications */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-slate-800">
                   <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
-                    <Award className="w-10 h-10 text-purple-400 mb-4" />
-                    <h3 className="text-lg font-bold text-white mb-2">Certified Partners</h3>
-                    <p className="text-sm text-slate-400">Gold and platinum tier partnerships with leading manufacturers for priority support and best pricing.</p>
-                  </div>
-                  <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
                     <Shield className="w-10 h-10 text-purple-400 mb-4" />
-                    <h3 className="text-lg font-bold text-white mb-2">Compliance Ready</h3>
-                    <p className="text-sm text-slate-400">Solutions designed to meet SOC 2, ISO 27001, HIPAA, PCI-DSS, and other regulatory requirements.</p>
+                    <h3 className="text-lg font-bold text-white mb-2">Data Security</h3>
+                    <p className="text-sm text-slate-400">FERPA and GDPR compliant with enterprise-grade encryption protecting student data and privacy.</p>
                   </div>
                   <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
-                    <TrendingUp className="w-10 h-10 text-purple-400 mb-4" />
+                    <Brain className="w-10 h-10 text-purple-400 mb-4" />
+                    <h3 className="text-lg font-bold text-white mb-2">AI-Powered Learning</h3>
+                    <p className="text-sm text-slate-400">Machine learning algorithms that personalize content and predict learning outcomes.</p>
+                  </div>
+                  <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6">
+                    <Zap className="w-10 h-10 text-purple-400 mb-4" />
                     <h3 className="text-lg font-bold text-white mb-2">Scalable Architecture</h3>
-                    <p className="text-sm text-slate-400">Infrastructure designed to scale seamlessly from departmental to enterprise-wide deployments.</p>
+                    <p className="text-sm text-slate-400">Cloud infrastructure supporting millions of concurrent users with 99.9% uptime.</p>
                   </div>
                 </div>
               </div>
@@ -375,10 +434,10 @@ const ComputerSystemsCommunicationEquipment = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Enterprise Success Stories
+              Success Stories
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Delivering mission-critical infrastructure solutions for organizations that demand excellence
+              Empowering institutions and organizations with transformative educational technology
             </p>
           </div>
 
@@ -421,33 +480,33 @@ const ComputerSystemsCommunicationEquipment = () => {
         </div>
       </section>
 
-      {/* Service Level Guarantees */}
+      {/* Stats Section */}
       <section className="py-16 sm:py-20 lg:py-24 border-y border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Service Level Commitments
+              Impact Across Education
             </h2>
             <p className="text-lg text-slate-400">
-              Industry-leading guarantees backed by our proven track record
+              Transforming learning experiences worldwide
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">99.99%</div>
-              <div className="text-slate-400">Uptime SLA</div>
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">500+</div>
+              <div className="text-slate-400">Institutions Served</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">&lt;15min</div>
-              <div className="text-slate-400">Response Time</div>
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">2M+</div>
+              <div className="text-slate-400">Active Students</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">24/7/365</div>
-              <div className="text-slate-400">Support Coverage</div>
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">10M+</div>
+              <div className="text-slate-400">Courses Delivered</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">10+ Years</div>
-              <div className="text-slate-400">Equipment Lifecycle</div>
+              <div className="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">99.9%</div>
+              <div className="text-slate-400">Platform Uptime</div>
             </div>
           </div>
         </div>
@@ -460,18 +519,18 @@ const ComputerSystemsCommunicationEquipment = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600" />
             <div className="relative p-12 sm:p-16 lg:p-20 text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Modernize Your IT Infrastructure?
+                Ready to Transform Education?
               </h2>
               <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Partner with industry experts to build a resilient, scalable infrastructure that powers your business growth
+                Let's build innovative learning solutions that engage students, empower educators, and deliver measurable outcomes
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                  Schedule Infrastructure Assessment
+                  Schedule Consultation
                   <ArrowRight className="w-5 h-5" />
                 </button>
                 <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  Contact Sales Team
+                  Request Demo
                 </button>
               </div>
             </div>
@@ -482,4 +541,4 @@ const ComputerSystemsCommunicationEquipment = () => {
   );
 };
 
-export default ComputerSystemsCommunicationEquipment;
+export default EducationSoftware;

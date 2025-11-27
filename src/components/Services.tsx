@@ -67,7 +67,7 @@ const Services = () => {
               ENTERPRISE SOLUTIONS
             </span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 sm:mb-6">
             Transform Your Business
           </h2>
           <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
@@ -157,7 +157,7 @@ const Services = () => {
               Let's discuss how we can help transform your business with our enterprise solutions
             </p>
             <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300">
-              Schedule Consultation
+              <a href="#contact">Schedule Consultation</a>
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>

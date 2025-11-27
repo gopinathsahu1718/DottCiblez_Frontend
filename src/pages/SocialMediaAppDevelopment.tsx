@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 const serviceData = {
   icon: Smartphone,
   title: "Social Media Applications Development & Management",
-  number: "05",
+  // number: "05",
   tagline: "Build, Launch, and Scale Next-Generation Social Platforms",
   description: "Transform your vision into thriving social communities with our end-to-end development and management services. We create engaging, scalable social media applications with cutting-edge features, robust security, and seamless user experiences that drive growth and retention.",
   bgImage: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -160,9 +160,9 @@ const SocialMediaAppDevelopment = () => {
           <div className="max-w-4xl">
             {/* Service Number & Icon */}
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-6xl sm:text-7xl font-bold text-slate-800">
+              {/* <span className="text-6xl sm:text-7xl font-bold text-slate-800">
                 {serviceData.number}
-              </span>
+              </span> */}
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
                 <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-purple-400" />
               </div>
@@ -409,10 +409,10 @@ const SocialMediaAppDevelopment = () => {
                     <p className="text-purple-300 font-bold text-lg mb-4">
                       {study.result}
                     </p>
-                    <button className="text-sm text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2 font-semibold">
+                    {/* <button className="text-sm text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2 font-semibold">
                       Read Case Study
                       <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
