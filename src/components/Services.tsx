@@ -1,4 +1,5 @@
-import { Monitor, Smartphone, Palette, ShoppingCart, BarChart, Settings, ArrowRight, Sparkles } from 'lucide-react';
+import { Monitor, Code, Share2, TrendingUp, Server, HardDrive, Cloud, Shield, GraduationCap, Network, ArrowRight, Sparkles } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const services = [
   {
@@ -7,51 +8,99 @@ const services = [
     description: "Custom websites and web applications built with the latest technologies for optimal performance and user experience.",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading"],
     bgImage: "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=800",
-    number: "01"
+    number: "01",
+    path: "/web-development-service"
   },
   {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications that deliver seamless experiences across all devices.",
-    features: ["iOS & Android", "Cross-Platform", "Push Notifications"],
+    icon: Code,
+    title: "Software Design",
+    description: "Comprehensive software design solutions tailored to your business needs with scalable architecture.",
+    features: ["Custom Solutions", "Scalable Architecture", "Agile Development"],
+    bgImage: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
+    number: "02",
+    path: "/software-design-service"
+  },
+  {
+    icon: Share2,
+    title: "Social Media App Development",
+    description: "Build engaging social media platforms with real-time features and seamless user interactions.",
+    features: ["Real-time Chat", "Feed Systems", "User Analytics"],
     bgImage: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800",
-    number: "02"
+    number: "03",
+    path: "/social-media-development-service"
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Beautiful, intuitive interfaces designed with user psychology and modern design principles in mind.",
-    features: ["User Research", "Wireframing", "Prototyping"],
-    bgImage: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-    number: "03"
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-Commerce Solutions",
-    description: "Complete e-commerce platforms with secure payment gateways and inventory management systems.",
-    features: ["Payment Integration", "Inventory System", "Analytics"],
-    bgImage: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-    number: "04"
-  },
-  {
-    icon: BarChart,
-    title: "Digital Marketing",
+    icon: TrendingUp,
+    title: "Social Media Marketing",
     description: "Data-driven marketing strategies to grow your online presence and reach your target audience.",
     features: ["SEO/SEM", "Social Media", "Content Strategy"],
     bgImage: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
-    number: "05"
+    number: "04",
+    path: "/social-media-marketing-service"
   },
   {
-    icon: Settings,
-    title: "IT Consulting",
-    description: "Expert guidance on technology strategy, infrastructure, and digital transformation initiatives.",
-    features: ["Strategy Planning", "Tech Audit", "Implementation"],
+    icon: Server,
+    title: "Datacenter Colocation",
+    description: "Secure and reliable datacenter colocation services with 24/7 monitoring and support.",
+    features: ["24/7 Monitoring", "High Security", "Redundant Power"],
+    bgImage: "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800",
+    number: "05",
+    path: "/datacenter-colocation-service"
+  },
+  {
+    icon: HardDrive,
+    title: "Computer Systems & Communication Equipment",
+    description: "Enterprise-grade computer systems and communication equipment for modern businesses.",
+    features: ["Hardware Solutions", "Network Equipment", "Infrastructure"],
+    bgImage: "https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800",
+    number: "06",
+    path: "/csce-service"
+  },
+  {
+    icon: Cloud,
+    title: "Cloud Datacenter Service",
+    description: "Scalable cloud infrastructure solutions with high availability and disaster recovery.",
+    features: ["Auto-scaling", "Backup & Recovery", "Global CDN"],
+    bgImage: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
+    number: "07",
+    path: "/cd-service"
+  },
+  {
+    icon: Shield,
+    title: "Cyber Audit Service",
+    description: "Comprehensive cybersecurity audits to protect your business from threats and vulnerabilities.",
+    features: ["Security Assessment", "Compliance Audit", "Risk Analysis"],
+    bgImage: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+    number: "08",
+    path: "/cyber-service"
+  },
+  {
+    icon: GraduationCap,
+    title: "Education Software",
+    description: "Innovative educational software solutions for modern learning environments and institutions.",
+    features: ["LMS Integration", "Interactive Learning", "Progress Tracking"],
+    bgImage: "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800",
+    number: "09",
+    path: "/education-software-service"
+  },
+  {
+    icon: Network,
+    title: "IT Infrastructure Service",
+    description: "Complete IT infrastructure management and support services for enterprise organizations.",
+    features: ["Network Management", "System Administration", "Technical Support"],
     bgImage: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
-    number: "06"
+    number: "10",
+    path: "/it-infrastructure-service"
   }
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
+  const handleExploreService = (path) => {
+    navigate(path);
+  };
+
   return (
     <section id="services" className="py-16 sm:py-20 lg:py-28 bg-slate-950 relative overflow-hidden">
       {/* Animated Background */}
@@ -122,7 +171,10 @@ const Services = () => {
                     </div>
 
                     {/* CTA Link */}
-                    <button className="group/btn inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors duration-300">
+                    <button
+                      onClick={() => handleExploreService(service.path)}
+                      className="group/btn inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                    >
                       Explore Service
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
                     </button>
