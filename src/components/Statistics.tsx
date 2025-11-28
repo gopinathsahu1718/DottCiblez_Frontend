@@ -81,7 +81,7 @@ const Statistics = () => {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="statistics-section">
+    <section ref={sectionRef} className="statistics-section" id="achievements">
       <div className="statistics-container">
         <div className="statistics-header">
           <h2 className="statistics-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">

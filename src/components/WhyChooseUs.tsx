@@ -86,7 +86,7 @@ function WhyChooseUs() {
   const totalSlides = Math.ceil(reasons.length / itemsPerView);
 
   return (
-    <section id="achievements" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -176,9 +176,8 @@ function WhyChooseUs() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'w-6 sm:w-7 md:w-8 bg-blue-800' : 'w-1.5 sm:w-2 bg-gray-300 hover:bg-gray-400'
-              }`}
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-6 sm:w-7 md:w-8 bg-blue-800' : 'w-1.5 sm:w-2 bg-gray-300 hover:bg-gray-400'
+                }`}
             />
           ))}
         </div>
