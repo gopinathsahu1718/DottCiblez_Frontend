@@ -8,14 +8,14 @@ const slides = [
     description: "We deliver cutting-edge technology solutions that drive growth and efficiency",
     // gradient: "from-blue-600 to-purple-600",
     gradient: "from-indigo-600 to-blue-600",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
+    image: "https://goldenowl-asia-assets-production.s3.ap-southeast-1.amazonaws.com/uploads/2025-05-08T15%3A13%3A19.901Z_software.jpeg"
   },
   {
     title: "Build the Future with Us",
     subtitle: "Expert Development Team at Your Service",
     description: "From concept to deployment, we bring your vision to life with precision",
     gradient: "from-indigo-600 to-blue-600",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
+    image: "https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg?semt=ais_hybrid&w=740&q=80"
   },
   {
     title: "Scale Your Business Today",
@@ -75,7 +75,7 @@ const Hero = () => {
             <div className="text-center md:text-left space-y-4 sm:space-y-6 order-2 md:order-1">
               <h1
                 key={`title-${currentSlide}`}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight px-4 sm:px-0 animate-fade-in"
+                className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight px-4 sm:px-0 animate-fade-in"
               >
                 {slide.title}
               </h1>
