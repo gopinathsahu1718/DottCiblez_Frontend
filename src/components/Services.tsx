@@ -140,7 +140,7 @@ const Services = () => {
                 <div className="relative h-full bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-slate-800 overflow-hidden transition-all duration-500 group-hover:border-slate-700">
                   {/* Top Bar with Number */}
                   <div className="flex items-center justify-between p-5 sm:p-6 pb-0">
-                    <span className="text-5xl sm:text-6xl font-bold text-slate-800 group-hover:text-slate-700 transition-colors duration-300">
+                    <span className="text-5xl sm:text-6xl font-bold text-slate-600 group-hover:text-slate-500 transition-colors duration-300">
                       {service.number}
                     </span>
                     <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center border border-blue-500/30 group-hover:scale-110 group-hover:border-blue-400/50 transition-all duration-300">

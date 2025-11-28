@@ -278,7 +278,7 @@ const ComputerSystemsCommunicationEquipment = () => {
                     className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 sm:p-8 hover:border-slate-700 transition-all duration-300"
                   >
                     <div className="flex flex-col sm:flex-row gap-6 items-start">
-                      <div className="text-5xl font-bold text-slate-800 group-hover:text-slate-700 transition-colors">
+                      <div className="text-5xl font-bold text-slate-500 group-hover:text-slate-700 transition-colors">
                         {step.step}
                       </div>
                       <div className="flex-1">

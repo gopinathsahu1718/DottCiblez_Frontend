@@ -10,37 +10,37 @@ function Team() {
     {
       name: "Alex Thompson",
       role: "Chief Executive Officer",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop",
+      image: "https://img.freepik.com/premium-photo/smiling-man-professional-profile-picture_606187-855.jpg",
       bio: "Visionary leader with 15+ years of tech industry experience"
     },
     {
       name: "Jessica Lee",
       role: "Chief Technology Officer",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop",
+      image: "https://static.vecteezy.com/system/resources/previews/025/474/309/large_2x/portrait-of-a-professional-woman-in-a-suit-business-woman-standing-in-an-office-ai-generated-photo.jpg",
       bio: "Expert in software architecture and cloud technologies"
     },
     {
       name: "Marcus Brown",
       role: "Lead Developer",
-      image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop",
+      image: "https://thumbs.dreamstime.com/b/portrait-business-happy-black-man-laptop-accounting-office-night-smile-auditor-confident-employee-computer-404122180.jpg",
       bio: "Full-stack developer passionate about building scalable solutions"
     },
     {
       name: "Sophia Martinez",
       role: "UX/UI Designer",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop",
+      image: "https://media.istockphoto.com/id/1398385367/photo/happy-millennial-business-woman-in-glasses-posing-with-hands-folded.jpg?s=612x612&w=0&k=20&c=Wd2vTDd6tJ5SeEY-aw0WL0bew8TAkyUGVvNQRj3oJFw=",
       bio: "Creative designer focused on user-centered design principles"
     },
     {
       name: "Ryan Kim",
       role: "Marketing Director",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop",
+      image: "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg",
       bio: "Digital marketing strategist driving brand growth"
     },
     {
       name: "Emma Wilson",
       role: "Project Manager",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop",
+      image: "https://i.pinimg.com/originals/e4/39/54/e4395494e82f2706e15d2c855f3c0e60.jpg",
       bio: "Agile expert ensuring timely project delivery"
     }
   ];
@@ -211,8 +211,9 @@ function Team() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-6 sm:w-7 md:w-8 bg-blue-600' : 'w-1.5 sm:w-2 bg-gray-300 hover:bg-gray-400'
-                }`}
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex ? 'w-6 sm:w-7 md:w-8 bg-blue-600' : 'w-1.5 sm:w-2 bg-gray-300 hover:bg-gray-400'
+              }`}
             />
           ))}
         </div>

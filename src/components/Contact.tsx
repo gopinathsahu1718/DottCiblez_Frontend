@@ -26,6 +26,16 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Custom validation to show your popup message
+    const requiredFields = ['name', 'email', 'subject', 'message'];
+    const emptyField = requiredFields.find(field => !formData[field].trim());
+
+    if (emptyField) {
+      alert("Please fill all the mandatory fields.");
+      return;
+    }
+
     setSending(true);
     setError('');
 
@@ -103,7 +113,7 @@ function Contact() {
                 </div>
                 <div className="detail-content">
                   <h4>Email Us</h4>
-                  <p><a href="mailto:info@dottciblez.com">info@dottciblez.com</a></p>
+                  <p><a href="mailto:info@dottciblez.com" className="font-bold">info@dottciblez.com</a></p>
                 </div>
               </div>
 
@@ -136,6 +146,7 @@ function Contact() {
             transition={{ duration: 0.6 }}
             className="contact-form"
             onSubmit={handleSubmit}
+            noValidate
           >
             {submitted && (
               <motion.div
@@ -162,7 +173,7 @@ function Contact() {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your Name"
+                  placeholder="Your Name *"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -174,7 +185,7 @@ function Contact() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Your Email"
+                  placeholder="Your Email *"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -200,7 +211,7 @@ function Contact() {
                 <input
                   type="text"
                   name="subject"
-                  placeholder="Subject"
+                  placeholder="Subject *"
                   value={formData.subject}
                   onChange={handleChange}
                   required
@@ -211,14 +222,23 @@ function Contact() {
             </div>
 
             <div className="form-group">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm text-gray-600">Your Message * (max 200 characters)</span>
+                <span className="text-sm text-gray-500">{formData.message.length}/200</span>
+              </div>
               <textarea
                 name="message"
                 placeholder="Your Message"
                 value={formData.message}
-                onChange={handleChange}
+                onChange={(e) => {
+                  if (e.target.value.length <= 200) {
+                    handleChange(e);
+                  }
+                }}
                 required
                 rows="6"
                 className="form-input form-textarea"
+                maxLength={200}
                 disabled={sending}
               />
             </div>

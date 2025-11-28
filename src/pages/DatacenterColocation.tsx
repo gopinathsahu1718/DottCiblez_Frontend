@@ -163,7 +163,7 @@ const DatacenterColocation = () => {
                 {serviceData.process.map((step, index) => (
                   <div key={index} className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-800 p-6 sm:p-8 hover:border-slate-700 transition-all duration-300">
                     <div className="flex flex-col sm:flex-row gap-6 items-start">
-                      <div className="text-5xl font-bold text-slate-800 group-hover:text-slate-700 transition-colors">{step.step}</div>
+                      <div className="text-5xl font-bold text-slate-500 group-hover:text-slate-700 transition-colors">{step.step}</div>
                       <div className="flex-1">
                         <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">{step.title}</h3>
                         <p className="text-slate-400 leading-relaxed">{step.description}</p>
