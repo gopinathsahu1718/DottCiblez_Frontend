@@ -1,4 +1,4 @@
-import { Monitor, Code, Share2, TrendingUp, Server, HardDrive, Cloud, Shield, GraduationCap, Network, ArrowRight, Sparkles } from 'lucide-react';
+import { Monitor, Code, Smartphone, TrendingUp, Server, HardDrive, Cloud, Shield, GraduationCap, Network, ArrowRight, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const services = [
@@ -21,7 +21,7 @@ const services = [
     path: "/software-design-service"
   },
   {
-    icon: Share2,
+    icon: Smartphone,
     title: "Social Media App Development",
     description: "Build engaging social media platforms with real-time features and seamless user interactions.",
     features: ["Real-time Chat", "Feed Systems", "User Analytics"],

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 // Computer Systems & Communication Equipment service data
 const serviceData = {
-  icon: Server,
+  icon: HardDrive,
   title: "Computer Systems & Communication Equipment",
   // number: "04",
   tagline: "Enterprise Infrastructure Solutions for Mission-Critical Operations",

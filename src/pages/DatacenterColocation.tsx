@@ -1,9 +1,9 @@
-import { Database, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Server, Thermometer, Lock, Activity, Star, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Server, Thermometer, Lock, Activity, Star, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 // Datacentre Colocation Services data (unchanged content)
 const serviceData = {
-  icon: Database,
+  icon: Server,
   title: "Datacentre Colocation",
   // number: "06",
   tagline: "Enterprise-Grade Infrastructure in Tier III+ Certified Facilities",

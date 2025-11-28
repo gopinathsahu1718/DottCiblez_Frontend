@@ -1,9 +1,9 @@
-import { Share2, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Target, BarChart3, MessageCircle, Hash, Star, Award } from 'lucide-react';
+import { TrendingUp, ArrowRight, CheckCircle2, Users, Clock, Shield, Zap, Target, BarChart3, MessageCircle, Hash, Star, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 // Social Media Marketing service data
 const serviceData = {
-  icon: Share2,
+  icon: TrendingUp,
   title: "Social Media Marketing",
   // number: "03",
   tagline: "Amplify Your Brand Voice Across Digital Channels",

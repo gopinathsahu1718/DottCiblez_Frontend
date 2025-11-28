@@ -1,9 +1,9 @@
-import { Palette, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Layers, Figma, Sparkles, Eye, Star, Award } from 'lucide-react';
+import { Code, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Layers, Figma, Sparkles, Eye, Star, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 // Software Design service data
 const serviceData = {
-  icon: Palette,
+  icon: Code,
   title: "Software Design",
   // number: "02",
   tagline: "Crafting Intuitive Interfaces That Users Love",
