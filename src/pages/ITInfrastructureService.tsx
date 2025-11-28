@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // IT Infrastructure & Network Services data
 const serviceData = {
   icon: Network,
-  title: "IT Infrastructure & Information Technology Network Services",
+  title: "IT Infrastructure Service",
   //   number: "04",
   tagline: "Build Robust, Scalable, and Future-Ready Infrastructure",
   description: "Design, deploy, and manage enterprise-grade IT infrastructure and network solutions that power your business operations. From data centers to cloud networks, we deliver high-performance, secure, and reliable infrastructure that scales with your growth while ensuring maximum uptime and optimal performance.",

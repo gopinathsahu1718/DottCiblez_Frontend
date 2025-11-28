@@ -83,14 +83,14 @@ const Navbar = () => {
   const services = [
     { name: 'Web Development', path: '/web-development-service' },
     { name: 'Software Design', path: '/software-design-service' },
-    { name: 'Social Media Applications Development & Management', path: '/social-media-development-service' },
+    { name: 'Social Media App Development', path: '/social-media-development-service' },
     { name: 'Social Media Marketing', path: '/social-media-marketing-service' },
-    { name: 'Datacentre Colocation Services', path: '/datacenter-colocation-service' },
+    { name: 'Datacentre Colocation', path: '/datacenter-colocation-service' },
     { name: 'Computer Systems & Communication Equipment', path: '/csce-service' },
-    { name: 'Cloud Datacentre Services', path: '/cd-service' },
-    { name: 'Cyber Audit Services', path: '/cyber-service' },
+    { name: 'Cloud Datacentre Service', path: '/cd-service' },
+    { name: 'Cyber Audit Service', path: '/cyber-service' },
     { name: 'Education Software', path: '/education-software-service' },
-    { name: 'IT Infrastructure Services', path: '/it-infrastructure-service' },
+    { name: 'IT Infrastructure Service', path: '/it-infrastructure-service' },
   ];
 
   return (

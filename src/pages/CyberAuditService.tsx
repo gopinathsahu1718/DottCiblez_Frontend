@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // Auditing, Reviewing & Testing Cyber Risks service data
 const serviceData = {
   icon: Shield,
-  title: "Auditing, Reviewing & Testing Cyber Risks",
+  title: "Cyber Audit Service",
   //   number: "03",
   tagline: "Identify Vulnerabilities Before Attackers Do",
   description: "Comprehensive cybersecurity assessments that uncover hidden vulnerabilities, evaluate security controls, and validate your defense mechanisms. Our expert-led audits, penetration testing, and risk reviews provide actionable insights to strengthen your security posture and ensure regulatory compliance.",

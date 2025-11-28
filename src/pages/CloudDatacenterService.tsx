@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // Cloud Service & Datacenters Providers service data
 const serviceData = {
   icon: Cloud,
-  title: "Cloud Service & Datacenters Providers",
+  title: "Cloud Datacenter Service",
   //   number: "07",
   tagline: "Enterprise-Grade Cloud Infrastructure & Data Center Solutions",
   description: "Power your business with cutting-edge cloud services and state-of-the-art data center infrastructure. We deliver scalable, secure, and highly available cloud solutions with 99.99% uptime, enterprise-grade security, and global reach to support your mission-critical applications and workloads.",

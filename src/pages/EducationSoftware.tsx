@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // Education & Training Computer Software service data
 const serviceData = {
   icon: GraduationCap,
-  title: "Education & Training Computer Software",
+  title: "Education Software",
   //   number: "06",
   tagline: "Transform Learning with Intelligent EdTech Solutions",
   description: "Revolutionize education and corporate training with cutting-edge software solutions. We build comprehensive learning management systems, interactive e-learning platforms, and AI-powered training tools that enhance knowledge retention, engagement, and measurable learning outcomes.",

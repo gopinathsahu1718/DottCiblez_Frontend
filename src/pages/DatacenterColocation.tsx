@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // Datacentre Colocation Services data (unchanged content)
 const serviceData = {
   icon: Database,
-  title: "Datacentre Colocation Services",
+  title: "Datacentre Colocation",
   // number: "06",
   tagline: "Enterprise-Grade Infrastructure in Tier III+ Certified Facilities",
   description: "Secure your critical infrastructure in our state-of-the-art colocation facilities. From single rack deployments to full cage solutions, we provide reliable, scalable, and cost-effective hosting with carrier-neutral connectivity, redundant power, advanced cooling, and 24/7 security in strategically located data centers.",
@@ -122,8 +122,8 @@ const DatacenterColocation = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 ${activeTab === tab
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-800'
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                  : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-800'
                   }`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}

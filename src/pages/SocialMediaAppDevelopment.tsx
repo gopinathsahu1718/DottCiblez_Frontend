@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // Social Media Applications Development & Management service data
 const serviceData = {
   icon: Smartphone,
-  title: "Social Media Applications Development & Management",
+  title: "Social Media App Development",
   // number: "05",
   tagline: "Build, Launch, and Scale Next-Generation Social Platforms",
   description: "Transform your vision into thriving social communities with our end-to-end development and management services. We create engaging, scalable social media applications with cutting-edge features, robust security, and seamless user experiences that drive growth and retention.",
