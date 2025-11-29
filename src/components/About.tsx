@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import logo from "../assets/logo.png"
 import './About.css';
+import { useNavigate } from "react-router-dom";
 
 interface Stat {
   number: string;
@@ -18,6 +19,7 @@ const About: React.FC = () => {
   const [statsVisible, setStatsVisible] = useState<boolean>(false);
   const sectionRef = useRef<HTMLElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -133,7 +135,7 @@ const About: React.FC = () => {
               order to deliver excellent solutions.
             </p>
 
-            <a href="#services" className="read-more-btn">Read More</a>
+            <a className="read-more-btn" onClick={() => navigate('/about-us')}>Read More</a>
           </div>
         </div>
 

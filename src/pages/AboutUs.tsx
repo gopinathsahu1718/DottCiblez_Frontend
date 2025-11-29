@@ -88,10 +88,10 @@ const AboutUs = () => {
   ];
 
   const founder = {
-    name: "Mohammed Al-Rahman",
+    name: "Samir Gouda",
     role: "Founder & CEO",
     image: founderi,
-    bio: "With over 5 years of experience in the IT industry, Mohammed founded Dott Ciblez Technologies with a vision to revolutionize how businesses leverage technology. His leadership and innovative approach have positioned the company as a leader in digital transformation across the Middle East.",
+    bio: "With over 5 years of experience in the IT industry, Samir founded Dott Ciblez Technologies with a vision to revolutionize how businesses leverage technology. His leadership and innovative approach have positioned the company as a leader in digital transformation across the Middle East.",
     achievements: [
       "5+ years in IT industry",
       "Former CTO at Fortune 500 company",
@@ -101,12 +101,12 @@ const AboutUs = () => {
     social: {
       linkedin: "#",
       twitter: "#",
-      email: "mohammed@dottciblez.com"
+      email: "samirgouda@dottciblez.com"
     }
   };
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
+    <div className="min-h-screen bg-white overflow-hidden pt-20 sm:pt-16">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br  overflow-hidden">
         {/* Animated Background */}
