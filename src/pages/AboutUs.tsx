@@ -8,6 +8,9 @@ import founderi from '../assets/founderimage.png'
 const AboutUs = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isVisible, setIsVisible] = useState({});
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -121,18 +124,18 @@ const AboutUs = () => {
                   Leading IT Solutions Provider
                 </span>
               </div>
-              
+
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 Transforming
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 py-5 sm:py-0 md:py-3">
                   Digital Future
                 </span>
               </h1>
-              
+
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
                 Dott Ciblez Technologies is the beacon of innovation and excellence, revolutionizing the digital landscape for businesses across the globe.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
                 <button className="group bg-gradient-to-r from-blue-600 to-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base lg:text-lg font-semibold shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
                   Get Started
@@ -167,7 +170,7 @@ const AboutUs = () => {
                   <p className="text-gray-300 text-xs sm:text-sm lg:text-base">Innovation • Excellence • Trust</p>
                 </div>
               </div>
-              
+
               {/* Floating Elements */}
               <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-blue-500/30 rounded-full blur-2xl animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-cyan-500/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -210,7 +213,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section> */}
-        {/* <Statistics/> */}
+      {/* <Statistics/> */}
 
       {/* About Section */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
@@ -234,7 +237,7 @@ const AboutUs = () => {
                   <p className="text-xs sm:text-sm lg:text-base text-gray-600">Recognized as pioneers in delivering cutting-edge IT solutions</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3 sm:gap-4 group">
                 <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-white" />
@@ -244,7 +247,7 @@ const AboutUs = () => {
                   <p className="text-xs sm:text-sm lg:text-base text-gray-600">Tailored solutions designed to meet your unique business needs</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-3 sm:gap-4 group">
                 <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-white" />
@@ -430,7 +433,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section> */}
-    
+
       {/* Founder Section */}
       <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-blue-500 to-blue-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -459,7 +462,7 @@ const AboutUs = () => {
                       className="relative w-full aspect-square object-cover rounded-2xl sm:rounded-3xl shadow-2xl"
                     />
                   </div>
-                  
+
                   {/* Social Links */}
                   <div className="flex justify-center gap-3 sm:gap-4 mt-4 sm:mt-6">
                     <a

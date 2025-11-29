@@ -12,6 +12,7 @@ import CloudDatacenterService from './pages/CloudDatacenterService';
 import CyberAuditService from './pages/CyberAuditService';
 import EducationSoftware from './pages/EducationSoftware';
 import ITInfrastructureService from './pages/ITInfrastructureService';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/web-development-service" element={<WebDevelopment />} />
           <Route path="/software-design-service" element={<SoftwareDesign />} />
           <Route path="/social-media-development-service" element={<SocialMediaAppDevelopment />} />
