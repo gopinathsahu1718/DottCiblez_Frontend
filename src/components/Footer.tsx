@@ -94,13 +94,13 @@ const Footer = () => {
               <li className="flex items-start gap-2 sm:gap-3">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-xs sm:text-sm">+1 (555) 123-4567</p>
-                  <p className="text-xs sm:text-sm">+1 (555) 765-4321</p>
+                  <p className="text-xs sm:text-sm">+91 7077792764</p>
+                  <p className="text-xs sm:text-sm">+91 7077791446</p>
                 </div>
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 flex-shrink-0 mt-1" />
-                <p className="text-xs sm:text-sm">123 Tech Street, Innovation District<br />San Francisco, CA 94105</p>
+                <p className="text-xs sm:text-sm">Unit 126, 1st floor, DLF cybercity, Infocity park, Patia, Bhubaneswar, 751024</p>
               </li>
             </ul>
           </div>

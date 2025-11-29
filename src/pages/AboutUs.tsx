@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Award, Target, Lightbulb, Users, Shield, TrendingUp, Star, CheckCircle, Zap, Globe, Code, Server, Smartphone, Cloud, Mail, Linkedin, Twitter } from 'lucide-react';
 import logo from '../assets/logo.png';
 import Statistics from '../components/Statistics';
-import founderi from '../assets/founderimage.png'
+import founderi from '../assets/founderimage.jpg'
 
 
 const AboutUs = () => {
@@ -88,7 +88,7 @@ const AboutUs = () => {
   ];
 
   const founder = {
-    name: "Samir Gouda",
+    name: "Samir Krushna Gouda",
     role: "Founder & CEO",
     image: founderi,
     bio: "With over 5 years of experience in the IT industry, Samir founded Dott Ciblez Technologies with a vision to revolutionize how businesses leverage technology. His leadership and innovative approach have positioned the company as a leader in digital transformation across the Middle East.",

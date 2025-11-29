@@ -114,7 +114,7 @@ function Contact() {
                   <div className="detail-icon"><FaPhone /></div>
                   <div className="detail-content">
                     <h4>Call Us</h4>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+91 6744521891</p>
                   </div>
                 </div>
 
@@ -122,7 +122,7 @@ function Contact() {
                   <div className="detail-icon"><FaMapMarkerAlt /></div>
                   <div className="detail-content">
                     <h4>Visit Us</h4>
-                    <p>123 Business St, Tech City, TC 12345</p>
+                    <p>Unit 126, 1st floor, DLF cybercity, Infocity park, Patia, Bhubaneswar, 751024</p>
                   </div>
                 </div>
               </div>
