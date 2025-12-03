@@ -23,7 +23,7 @@ const Footer = () => {
               <Twitter className="cursor-pointer hover:text-blue-400" />
               <Instagram className="cursor-pointer hover:text-pink-600" />
               <Linkedin className="cursor-pointer hover:text-blue-700" />
-              <Github className="cursor-pointer hover:text-gray-500" />
+              {/* <Github className="cursor-pointer hover:text-gray-500" /> */}
             </div>
           </div>
 
