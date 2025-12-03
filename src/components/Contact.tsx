@@ -80,10 +80,10 @@ function Contact() {
             transition={{ duration: 0.6 }}
             className="section-header"
           >
-            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center">
               Get In Touch
             </h2>
-            <p className="section-subtitle">
+            <p className="section-subtitle text-center">
               Have a project in mind? We'd love to hear from you
             </p>
           </motion.div>

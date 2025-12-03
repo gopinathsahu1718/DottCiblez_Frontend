@@ -137,11 +137,11 @@ const AboutUs = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
-                <button className="group bg-gradient-to-r from-blue-600 to-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base lg:text-lg font-semibold shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                <button className="group bg-gradient-to-r from-blue-600 to-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-semibold shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
                   Get Started
                   <Zap className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform" />
                 </button>
-                <button className="bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base lg:text-lg font-semibold hover:bg-white/20 transform transition-all duration-300 hover:scale-105">
+                <button className="bg-white/10 backdrop-blur-sm border-2 border-black/20 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-semibold hover:bg-white/20 transform transition-all duration-300 hover:scale-105">
                   Learn More
                 </button>
               </div>

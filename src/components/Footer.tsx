@@ -67,11 +67,11 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold text-base sm:text-lg mb-3 sm:mb-4">Services</h4>
             <ul className="space-y-2 sm:space-y-3">
-              {['Web Development', 'Mobile Apps', 'UI/UX Design', 'E-Commerce', 'IT Consulting'].map((service) => (
+              {['Web Development', 'Software Design', 'Social Media App Development', 'Social Media Marketing', 'Datacenter Colocation', 'Computer Systems & Communication Equipment', 'Cloud Datacenter Service', 'Cyber Audit Service', 'Education Software', 'IT Infrastructure Service'].map((service) => (
                 <li key={service}>
                   <button
                     onClick={() => scrollToSection('services')}
-                    className="hover:text-purple-400 transition-colors duration-300 text-sm sm:text-base"
+                    className="hover:text-purple-400 transition-colors duration-300 text-sm sm:text-base text-left"
                   >
                     {service}
                   </button>
@@ -100,7 +100,10 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 flex-shrink-0 mt-1" />
+                <div className='space-y-2'>
                 <p className="text-xs sm:text-sm">Unit 126, 1st floor, DLF cybercity, Infocity park, Patia, Bhubaneswar, 751024</p>
+                <p className="text-xs sm:text-sm">Unit 126, 1st floor, DLF cybercity, Infocity park, Patia, Bhubaneswar, 751024</p>
+                </div>
               </li>
             </ul>
           </div>
