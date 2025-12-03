@@ -1,5 +1,6 @@
 import { Monitor, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Code, Smartphone, Globe, MessageSquare, Star, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Example service data - you can dynamically load this based on route
 const serviceData = {
@@ -100,6 +101,7 @@ const serviceData = {
 };
 
 const WebDevelopment = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
   const Icon = serviceData.icon;
   useEffect(() => {
@@ -147,13 +149,13 @@ const WebDevelopment = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300">
+              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300" onClick={() => navigate('/contact-us')}>
                 Get Started
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-800/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300">
+              {/* <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-800/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300">
                 View Case Studies
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -189,8 +191,8 @@ const WebDevelopment = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-300 ${activeTab === tab
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-800'
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                  : 'bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-800'
                   }`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -350,13 +352,13 @@ const WebDevelopment = () => {
                 Let's discuss how our {serviceData.title.toLowerCase()} services can help you achieve your goals
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300" onClick={() => navigate('/contact-us')}>
                   Schedule a Consultation
                   <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
+                {/* <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
                   Download Brochure
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

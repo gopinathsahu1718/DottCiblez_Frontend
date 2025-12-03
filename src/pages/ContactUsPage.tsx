@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Contact from '../components/Contact';
 import '../components/Contact.css'
@@ -21,6 +21,10 @@ const ContactUsPage: React.FC = () => {
     subject: '',
     message: ''
   });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   const locations: Location[] = [
     {
@@ -71,13 +75,13 @@ const ContactUsPage: React.FC = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="relative">
             {/* Google Maps Embed */}
-            <iframe 
+            <iframe
               src={locations[selectedLocation].mapUrl}
-              width="100%" 
+              width="100%"
               height="400"
               style={{ border: 0 }}
               allowFullScreen={true}
-              loading="lazy" 
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full"
             />
@@ -90,11 +94,10 @@ const ContactUsPage: React.FC = () => {
                 <button
                   key={location.id}
                   onClick={() => setSelectedLocation(index)}
-                  className={`flex-1 px-6 py-4 text-sm font-medium transition-colors whitespace-nowrap ${
-                    selectedLocation === index
-                      ? 'bg-white text-blue-600 border-b-2 border-blue-600'
-                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-                  }`}
+                  className={`flex-1 px-6 py-4 text-sm font-medium transition-colors whitespace-nowrap ${selectedLocation === index
+                    ? 'bg-white text-blue-600 border-b-2 border-blue-600'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    }`}
                 >
                   {location.name}
                 </button>
@@ -108,33 +111,32 @@ const ContactUsPage: React.FC = () => {
           {locations.map((location, index) => (
             <div
               key={location.id}
-              className={`bg-white rounded-lg shadow-md p-6 transition-all cursor-pointer ${
-                selectedLocation === index ? 'ring-2 ring-blue-600' : ''
-              }`}
+              className={`bg-white rounded-lg shadow-md p-6 transition-all cursor-pointer ${selectedLocation === index ? 'ring-2 ring-blue-600' : ''
+                }`}
               onClick={() => setSelectedLocation(index)}
             >
               <h3 className="text-xl font-bold text-gray-900 mb-4">{location.name}</h3>
-              
+
               <div className="space-y-3">
                 <div className="flex items-start">
                   <MapPin className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0" />
                   <p className="text-gray-600 text-sm">{location.address}</p>
                 </div>
-                
+
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
                   <a href={`tel:${location.phone}`} className="text-gray-600 text-sm hover:text-blue-600">
                     {location.phone}
                   </a>
                 </div>
-                
+
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
                   <a href={`mailto:${location.email}`} className="text-gray-600 text-sm hover:text-blue-600">
                     {location.email}
                   </a>
                 </div>
-                
+
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
                   <p className="text-gray-600 text-sm">{location.hours}</p>
@@ -214,7 +216,7 @@ const ContactUsPage: React.FC = () => {
           </div>
         </div>
       </div> */}
-      <Contact/>
+      <Contact />
     </div>
   );
 };

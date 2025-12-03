@@ -1,5 +1,6 @@
 import { Cloud, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, Server, Database, Lock, Globe, Star, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Cloud Service & Datacenters Providers service data
 const serviceData = {
@@ -176,6 +177,7 @@ const serviceData = {
 };
 
 const CloudDatacenterService = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
   const Icon = serviceData.icon;
   useEffect(() => {
@@ -223,13 +225,13 @@ const CloudDatacenterService = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300">
+              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300" onClick={() => navigate('/contact-us')}>
                 Get Started
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-800/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300">
+              {/* <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-800/50 text-white font-semibold rounded-xl border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300">
                 Tour Data Centers
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -548,13 +550,13 @@ const CloudDatacenterService = () => {
                 Let's build a secure, scalable cloud infrastructure that powers your business growth with enterprise-grade reliability
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300" onClick={() => navigate('/contact-us')}>
                   Schedule Consultation
                   <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
+                {/* <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
                   Get Custom Quote
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

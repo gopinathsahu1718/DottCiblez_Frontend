@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import './GrowBusiness.css'
+import { useNavigate } from 'react-router-dom';
 
 function GrowBusiness() {
+  const navigate = useNavigate();
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-600 to-indigo-700 relative overflow-hidden">
       {/* Pattern Background */}
@@ -77,7 +79,7 @@ function GrowBusiness() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 sm:gap-2.5 md:gap-3 px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-3.5 md:py-4 lg:py-5 bg-white text-blue-600 rounded-full text-sm sm:text-base md:text-lg lg:text-xl font-bold cursor-pointer transition-all duration-300 shadow-xl hover:shadow-2xl mt-4 sm:mt-6 md:mt-8"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => navigate('/contact-us')}
           >
             Start Your Journey
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6" />

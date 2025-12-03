@@ -209,7 +209,7 @@ const Services = () => {
               Let's discuss how we can help transform your business with our enterprise solutions
             </p>
             <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300">
-              <a href="#contact">Schedule Consultation</a>
+              <a onClick={() => navigate('/contact-us')}>Schedule Consultation</a>
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>

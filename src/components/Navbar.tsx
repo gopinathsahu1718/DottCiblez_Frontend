@@ -82,6 +82,15 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleContactUsClick = () => {
+    // Close all menus
+    setIsMobileMenuOpen(false);
+    setIsServicesOpen(false);
+    setIsMobileServicesOpen(false);
+    navigate('/contact-us');
+    // Scroll to top
+  };
+
   const handleServiceNavigation = (path) => {
     // Close all menus and dropdowns
     setIsServicesOpen(false);
@@ -240,7 +249,7 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={handleContactUsClick}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2 group relative"
               >
                 Contact
@@ -326,7 +335,7 @@ const Navbar = () => {
             Achievements
           </button>
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={handleContactUsClick}
             className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium"
           >
             Contact

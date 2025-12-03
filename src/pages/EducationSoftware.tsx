@@ -1,5 +1,6 @@
 import { GraduationCap, ArrowRight, CheckCircle2, Users, Clock, TrendingUp, Shield, Zap, BookOpen, Video, Brain, Award, Star, Monitor } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Education & Training Computer Software service data
 const serviceData = {
@@ -167,6 +168,7 @@ const serviceData = {
 };
 
 const EducationSoftware = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
   const Icon = serviceData.icon;
   useEffect(() => {
@@ -214,7 +216,7 @@ const EducationSoftware = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300">
+              <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300" onClick={() => navigate('/contact-us')}>
                 Start Your Project
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -525,13 +527,13 @@ const EducationSoftware = () => {
                 Let's build innovative learning solutions that engage students, empower educators, and deliver measurable outcomes
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300" onClick={() => navigate('/contact-us')}>
                   Schedule Consultation
                   <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
+                {/* <button className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
                   Request Demo
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

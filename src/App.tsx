@@ -13,6 +13,7 @@ import CyberAuditService from './pages/CyberAuditService';
 import EducationSoftware from './pages/EducationSoftware';
 import ITInfrastructureService from './pages/ITInfrastructureService';
 import AboutUs from './pages/AboutUs';
+import ContactUsPage from './pages/ContactUsPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/web-development-service" element={<WebDevelopment />} />
           <Route path="/software-design-service" element={<SoftwareDesign />} />
           <Route path="/social-media-development-service" element={<SocialMediaAppDevelopment />} />

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const slides = [
   {
@@ -29,6 +30,7 @@ const slides = [
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -96,14 +98,14 @@ const Hero = () => {
                 className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4 justify-center md:justify-start px-4 sm:px-0 animate-fade-in-delay-3"
               >
                 <button
-                  onClick={scrollToContact}
+                  onClick={() => navigate('/contact-us')}
                   className={`bg-gradient-to-r ${slide.gradient} text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base group`}
                 >
                   Get Started
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button
-                  onClick={scrollToServices}
+                  onClick={() => navigate('/about-us')}
                   className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:border-gray-400 hover:bg-gray-50 hover:shadow-md transition-all duration-300 text-sm sm:text-base"
                 >
                   Learn More
