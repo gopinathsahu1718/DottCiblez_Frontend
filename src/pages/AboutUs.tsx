@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Award, Target, Lightbulb, Users, Shield, TrendingUp, Star, CheckCircle, Zap, Globe, Code, Server, Smartphone, Cloud, Mail, Linkedin, Twitter } from 'lucide-react';
 import logo from '../assets/logo.png';
 import Statistics from '../components/Statistics';
-import founderi from '../assets/founderimage.jpg'
+import founderi from '../assets/founderimage2.png'
 
 
 const AboutUs = () => {
