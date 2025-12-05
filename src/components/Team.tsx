@@ -36,7 +36,7 @@ function Team() {
     {
       name: "Jessica Lee",
       role: "Chief Technology Officer",
-      image: "https://static.vecteezy.com/system/resources/previews/025/474/309/large_2x/portrait-of-a-professional-woman-in-a-suit-business-woman-standing-in-an-office-ai-generated-photo.jpg",
+      image: "https://img.freepik.com/premium-photo/skilled-female-software-engineer_975188-52382.jpg",
       bio: "Expert in software architecture and cloud technologies",
       description: "Jessica Lee brings deep technical expertise in cloud architecture, microservices, and distributed systems. With a PhD in Computer Science and 12+ years of hands-on experience, she has architected solutions for millions of users. Jessica previously led engineering teams at major tech companies and has multiple patents in cloud computing. She's an advocate for clean code practices and believes in building scalable, maintainable systems. In her free time, she contributes to open-source projects and mentors women in tech.",
       email: "jessica.lee@company.com",

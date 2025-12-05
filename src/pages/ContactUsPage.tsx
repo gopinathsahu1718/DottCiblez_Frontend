@@ -29,31 +29,32 @@ const ContactUsPage: React.FC = () => {
   const locations: Location[] = [
     {
       id: 1,
-      name: "Dott Ciblez",
+      name: "Dott Ciblez Headquarters - UAE",
+      address: "Dubai United Arab Emirates",
+      phone: "+971 56 257 5512",
+      email: "info@dottciblez.com",
+      hours: "Mon-Fri: 9:00 AM - 6:00 PM",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231052.00716473575!2d55.210714132651965!3d25.19689481852386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1764926086459!5m2!1sen!2sin"
+    },
+    {
+      id: 2,
+      name: "Dott Ciblez - Bhubaneswar",
       address: "Unit 126, 1st floor, DLF cybercity, Infocity park, Patia, Bhubaneswar, 751024",
       phone: "+91 7077792764, +91 7077791446",
       email: "info@dottciblez.com",
       hours: "Mon-Fri: 9:00 AM - 6:00 PM",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.2050666253112!2d85.80654519919739!3d20.349042400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1908e025984c55%3A0xee1fcd1f11e55141!2sDLF%20Cyber%20City!5e0!3m2!1sen!2sin!4v1764774578639!5m2!1sen!2sin"
-    },
-    {
-      id: 2,
-      name: "Headquarters - New York",
-      address: "123 Business Ave, Manhattan, NY 10001",
-      phone: "+1 (212) 555-0100",
-      email: "ny@company.com",
-      hours: "Mon-Fri: 9:00 AM - 6:00 PM",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830894612!2d-74.11976373946229!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-    },
-    {
-      id: 3,
-      name: "West Coast Office - San Francisco",
-      address: "456 Tech Boulevard, San Francisco, CA 94102",
-      phone: "+1 (415) 555-0200",
-      email: "sf@company.com",
-      hours: "Mon-Fri: 8:00 AM - 5:00 PM",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555215143!2d-122.50764017832515!3d37.75767177951862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1234567890124!5m2!1sen!2sin"
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14962.953704957332!2d85.8072102870824!3d20.352421876645764!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1908e025984c55%3A0xee1fcd1f11e55141!2sDLF%20Cyber%20City!5e0!3m2!1sen!2sin!4v1764925879173!5m2!1sen!2sin"
     }
+    
+    // {
+    //   id: 3,
+    //   name: "West Coast Office - San Francisco",
+    //   address: "456 Tech Boulevard, San Francisco, CA 94102",
+    //   phone: "+1 (415) 555-0200",
+    //   email: "sf@company.com",
+    //   hours: "Mon-Fri: 8:00 AM - 5:00 PM",
+    //   mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555215143!2d-122.50764017832515!3d37.75767177951862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1234567890124!5m2!1sen!2sin"
+    // }
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -107,44 +108,48 @@ const ContactUsPage: React.FC = () => {
         </div>
 
         {/* Location Details Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mt-8">
-          {locations.map((location, index) => (
-            <div
-              key={location.id}
-              className={`bg-white rounded-lg shadow-md p-6 transition-all cursor-pointer ${selectedLocation === index ? 'ring-2 ring-blue-600' : ''
-                }`}
-              onClick={() => setSelectedLocation(index)}
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{location.name}</h3>
+        {/* Location Details Cards - Perfectly Centered */}
+<div className="mt-12 max-w-5xl mx-auto px-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
+    {locations.map((location, index) => (
+      <div
+        key={location.id}
+        onClick={() => setSelectedLocation(index)}
+        className={`bg-white rounded-lg shadow-md p-6 transition-all cursor-pointer w-full max-w-sm ${
+          selectedLocation === index ? 'ring-2 ring-blue-600 shadow-xl' : 'hover:shadow-lg'
+        }`}
+      >
+        <h3 className="text-xl font-bold text-gray-900 mb-4">{location.name}</h3>
 
-              <div className="space-y-3">
-                <div className="flex items-start">
-                  <MapPin className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-                  <p className="text-gray-600 text-sm">{location.address}</p>
-                </div>
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+            <p className="text-gray-600 text-sm leading-relaxed">{location.address}</p>
+          </div>
 
-                <div className="flex items-center">
-                  <Phone className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
-                  <a href={`tel:${location.phone}`} className="text-gray-600 text-sm hover:text-blue-600">
-                    {location.phone}
-                  </a>
-                </div>
+          <div className="flex items-center gap-3">
+            <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+            <a href={`tel:${location.phone.replace(/[^+\d]/g, '')}`} className="text-gray-600 text-sm hover:text-blue-600 transition">
+              {location.phone}
+            </a>
+          </div>
 
-                <div className="flex items-center">
-                  <Mail className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
-                  <a href={`mailto:${location.email}`} className="text-gray-600 text-sm hover:text-blue-600">
-                    {location.email}
-                  </a>
-                </div>
+          <div className="flex items-center gap-3">
+            <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+            <a href={`mailto:${location.email}`} className="text-gray-600 text-sm hover:text-blue-600 transition">
+              {location.email}
+            </a>
+          </div>
 
-                <div className="flex items-center">
-                  <Clock className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
-                  <p className="text-gray-600 text-sm">{location.hours}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+          <div className="flex items-center gap-3">
+            <Clock className="w-5 h-5 text-blue-600 flex-shrink-0" />
+            <p className="text-gray-600 text-sm">{location.hours}</p>
+          </div>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
 
       {/* Contact Form Section */}

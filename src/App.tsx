@@ -14,6 +14,7 @@ import EducationSoftware from './pages/EducationSoftware';
 import ITInfrastructureService from './pages/ITInfrastructureService';
 import AboutUs from './pages/AboutUs';
 import ContactUsPage from './pages/ContactUsPage';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/it-infrastructure-service" element={<ITInfrastructureService />} />
         </Routes>
         <Footer />
+        <WhatsAppButton/>
       </div>
     </Router>
   );

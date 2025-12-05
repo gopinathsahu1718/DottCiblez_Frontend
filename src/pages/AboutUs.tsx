@@ -186,6 +186,69 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* About Us Brief Section */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                About Us
+              </h2>
+              {/* <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div> */}
+            </div>
+            
+            <div className="space-y-4 sm:space-y-6 text-gray-700 text-center mb-8 sm:mb-10">
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
+                Founded in 2021 and headquartered in Dubai, UAE, Dott Ciblez Technologies has rapidly 
+                established itself as your trusted IT partner, empowering businesses across the United Arab 
+                Emirates and beyond. We offer a comprehensive range of cost-effective IT solutions to help 
+                you thrive in today's dynamic digital landscape.
+              </p>
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
+                From cybersecurity and cloud solutions to AI and managed IT services, our expert team 
+                of over 50 professionals delivers what you need to stay ahead. We're committed to your 
+                success, tailoring solutions to fit your specific requirements and the dynamic Dubai market. 
+                With a portfolio of 3150+ successfully delivered projects and 3200+ satisfied clients, we've 
+                proven our dedication to excellence and innovation.
+              </p>
+            </div>
+
+            {/* Company Info Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10">
+              <div className="bg-white border-2 border-blue-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover:border-blue-500 hover:shadow-lg transition-all duration-300">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-2">2021</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-medium">Founded</div>
+              </div>
+              
+              <div className="bg-white border-2 border-blue-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover:border-blue-500 hover:shadow-lg transition-all duration-300">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-2">Dubai</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-medium">Headquarters</div>
+              </div>
+              
+              <div className="bg-white border-2 border-blue-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover:border-blue-500 hover:shadow-lg transition-all duration-300">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-2">50+</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-medium">Team Members</div>
+              </div>
+              
+              <div className="bg-white border-2 border-blue-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover:border-blue-500 hover:shadow-lg transition-all duration-300">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-2">3150+</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-medium">Projects Delivered</div>
+              </div>
+            </div>
+
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full text-base lg:text-lg font-semibold shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                Get in Touch
+                <Zap className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+              </button>
+              <button className="bg-white border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full text-base lg:text-lg font-semibold hover:bg-blue-50 transform transition-all duration-300 hover:scale-105">
+                Our Services
+              </button>
+            </div> */}
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       {/* <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-slate-900 to-slate-800 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

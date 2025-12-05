@@ -27,16 +27,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-bold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-3">
-              <li><Link to="/" className="hover:text-purple-400">Home</Link></li>
-              <li><Link to="/about-us" className="hover:text-purple-400">About Us</Link></li>
-              <li><Link to="/contact-us" className="hover:text-purple-400">Contact</Link></li>
-            </ul>
-          </div>
-
           {/* Services */}
           <div>
             <h4 className="text-white font-bold text-lg mb-4">Services</h4>
@@ -64,13 +54,25 @@ const Footer = () => {
 
             </ul>
           </div>
+          
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white font-bold text-lg mb-4">Quick Links</h4>
+            <ul className="space-y-3">
+              <li><Link to="/" className="hover:text-purple-400">Home</Link></li>
+              <li><Link to="/about-us" className="hover:text-purple-400">About Us</Link></li>
+              <li><Link to="/contact-us" className="hover:text-purple-400">Contact</Link></li>
+            </ul>
+          </div>
+
+          
 
           {/* Contact Info */}
           <div className="col-span-2 lg:col-span-1">
             <h4 className="text-white font-bold text-lg mb-4">Contact Info</h4>
             <ul className="space-y-4">
               <li className="flex gap-3">
-                <Mail className="w-5 h-5 text-purple-400" />
+                <Mail className="mt-1.5 w-5 h-5 text-purple-400" />
                 <div>
                   <p><a href="mailto:info@dottciblez.com" className="text-purple-400">info@dottciblez.com</a></p>
                   <p><a href="mailto:support@dottciblez.com" className="text-purple-400">support@dottciblez.com</a></p>
@@ -78,7 +80,7 @@ const Footer = () => {
               </li>
 
               <li className="flex gap-3">
-                <Phone className="w-5 h-5 text-purple-400" />
+                <Phone className="mt-1.5 w-5 h-5 text-purple-400" />
                 <div>
                   <p>+91 7077792764</p>
                   <p>+91 7077791446</p>
@@ -86,9 +88,10 @@ const Footer = () => {
               </li>
 
               <li className="flex gap-3">
-                <MapPin className="w-5 h-5 text-purple-400" />
+                <MapPin className="mt-1.5 w-5 h-5 text-purple-400" />
                 <div>
-                  <p>Unit 126, 1st Floor, DLF Cybercity, Bhubaneswar, 751024</p>
+                  <p className='py-1'>Unit 126, 1st Floor, DLF Cybercity, Bhubaneswar, 751024</p>
+                  <p>Dubai United Arab Emirates</p>
                 </div>
               </li>
             </ul>

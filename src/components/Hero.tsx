@@ -95,7 +95,7 @@ const Hero = () => {
               </p>
               <div
                 key={`buttons-${currentSlide}`}
-                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4 justify-center md:justify-start px-4 sm:px-0 animate-fade-in-delay-3"
+                className="flex flex-row sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4 justify-center md:justify-start px-4 sm:px-0 animate-fade-in-delay-3"
               >
                 <button
                   onClick={() => navigate('/contact-us')}
@@ -118,7 +118,7 @@ const Hero = () => {
               <div className="relative mx-auto max-w-sm sm:max-w-md md:max-w-full">
                 <div
                   key={`image-${currentSlide}`}
-                  className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl animate-scale-in"
+                  className="relative w-full h-72 sm:h-72 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl animate-scale-in"
                 >
                   <img
                     src={slide.image}
@@ -137,7 +137,7 @@ const Hero = () => {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 z-10"
+        className="absolute left-2 sm:left-4 top-2/3 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 z-10"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
@@ -145,7 +145,7 @@ const Hero = () => {
 
       <button
         onClick={nextSlide}
-        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 z-10"
+        className="absolute right-2 sm:right-4 top-2/3 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 z-10"
         aria-label="Next slide"
       >
         <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
