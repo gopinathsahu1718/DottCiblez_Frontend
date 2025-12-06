@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://gopinathsahu1718.github.io/DottCiblez_Frontend",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
