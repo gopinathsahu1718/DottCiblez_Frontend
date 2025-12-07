@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-white.png';
 
 import UAEFlag from '../assets/UAE.png';
 import IndiaFlag from '../assets/INDIA.png';
@@ -13,7 +13,7 @@ const Footer = () => {
 
           {/* Logo Section */}
           <div className="col-span-2 lg:col-span-1">
-            <img src={logo} alt="DottCiblez Logo" className="h-20 sm:h-24 md:h-28 lg:h-24 w-auto object-contain" />
+            <img src={logo} alt="DottCiblez Logo" className="h-32 sm:h-32 md:h-32 lg:h-32 w-auto object-contain" />
             <p className="text-sm sm:text-base text-gray-400 mb-6">
               Transforming businesses through innovative software solutions and exceptional digital experiences.
             </p>
