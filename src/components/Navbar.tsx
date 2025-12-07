@@ -168,7 +168,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="DottCiblez Logo"
-                  className="h-16 sm:h-16 md:h-16 w-auto object-contain transition-opacity duration-300 hover:opacity-90"
+                  className="h-20 sm:h-20 md:h-20 w-auto object-contain transition-opacity duration-300 hover:opacity-90"
                   onError={() => setLogoError(true)}
                 />
               ) : (
